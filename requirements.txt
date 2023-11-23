@@ -1,4 +1,1 @@
-boto3
 git+https://github.com/mrtj/st-dynamodb-connection
-st-files-connection
-streamlit_autorefresh
