@@ -1,4 +1,4 @@
 boto3
-https://github.com/mrtj/st-dynamodb-connection
+git+https://github.com/mrtj/st-dynamodb-connection
 st-files-connection
 streamlit_autorefresh
