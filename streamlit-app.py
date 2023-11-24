@@ -67,7 +67,7 @@ with placeholder.container():
     kpi3.metric(label="Current Productivity ⏳", value=100, delta=10)
   
     # Reemplazamos el contenido del placeholder con la 
-    #placeholder.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
+    placeholder.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
     #placeholder.markdown("### Detailed Data View")
     #placeholder.dataframe(df_last)
 
