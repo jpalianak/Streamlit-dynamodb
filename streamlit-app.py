@@ -1,5 +1,5 @@
 import streamlit as st
-from dynamodb_connection import DynamoDBConnection
+#from dynamodb_connection import DynamoDBConnection
 import pandas as pd
 import time
 import boto3
