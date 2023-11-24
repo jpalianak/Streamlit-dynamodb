@@ -1,2 +1,4 @@
 boto3
 streamlit_autorefresh
+plotly.express
+pandas
