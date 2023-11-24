@@ -60,6 +60,7 @@ df_last = compute_movement()
 
 # Reemplazamos el contenido del placeholder con la 
 placeholder.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
+st.markdown("### Detailed Data View")
 st.dataframe(df_last)
 
     # Actualizamos cada 1 minutos
