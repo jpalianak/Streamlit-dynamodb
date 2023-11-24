@@ -56,7 +56,7 @@ def compute_movement():
 #while True:
     # Obtenemos los nuevos datos
 df_last = compute_movement()
-st.write(df_last)
+#st.write(df_last)
 
 # Reemplazamos el contenido del placeholder con la 
 placeholder.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=600, use_container_width=False)
