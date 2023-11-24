@@ -59,7 +59,7 @@ df_last = compute_movement()
 #st.write(df_last)
 
 # Reemplazamos el contenido del placeholder con la 
-placeholder.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=600, use_container_width=False)
+placeholder.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
   
     # Actualizamos cada 1 minutos
     #time.sleep(60)
