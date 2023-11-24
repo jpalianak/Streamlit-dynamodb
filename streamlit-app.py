@@ -62,9 +62,9 @@ with placeholder.container():
     kpi1, kpi2, kpi3 = st.columns(3)
 
     # fill in those three columns with respective metrics or KPIs 
-    kpi1.metric(label="Age ⏳", value=round(100), delta= round(100))
-    kpi2.metric(label="Married Count 💍", value=round(100), delta= round(100))
-    kpi3.metric(label="A/C Balance ＄", value= round(100), delta= delta= round(100))
+    kpi1.metric(label="Age ⏳", value=round(100), delta=round(100))
+    kpi2.metric(label="Married Count 💍", value=round(100), delta=round(100))
+    kpi3.metric(label="A/C Balance ＄", value=round(100), delta=round(100))
   
     # Reemplazamos el contenido del placeholder con la 
     #placeholder.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
