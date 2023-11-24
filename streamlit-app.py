@@ -53,17 +53,36 @@ def compute_movement():
   df_new['Ratio'] = df_new['Cumulative_sum_si'] / df_new['Cumulative_total']
   return df_new
 
-#while True:
+with placeholder.container():
+      
     # Obtenemos los nuevos datos
-df_last = compute_movement()
-#st.write(df_last)
+    df_last = compute_movement()
 
-# Reemplazamos el contenido del placeholder con la 
-placeholder.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
-placeholder.markdown("### Detailed Data View")
-placeholder.dataframe(df_last)
+    # create three columns
+    kpi1, kpi2, kpi3 = st.columns(3)
 
-    # Actualizamos cada 1 minutos
-    #time.sleep(60)
+    # fill in those three columns with respective metrics or KPIs 
+    kpi1.metric(label="Age ⏳", value=round(avg_age), delta= round(avg_age) - 10)
+    kpi2.metric(label="Married Count 💍", value= int(count_married), delta= - 10 + count_married)
+    kpi3.metric(label="A/C Balance ＄", value= f"$ {round(balance,2)} ", delta= - round(balance/count_married) * 100)
+  
+    # Reemplazamos el contenido del placeholder con la 
+    placeholder.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
+    placeholder.markdown("### Detailed Data View")
+    placeholder.dataframe(df_last)
 
-   
+    # create two columns for charts 
+    fig_col1, fig_col2 = st.columns(2)
+  
+    with fig_col1:
+        st.markdown("### First Chart")
+        fig = px..line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
+        st.write(fig)
+    with fig_col2:
+        st.markdown("### Second Chart")
+        fig2 = px.histogram(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
+        st.write(fig2)
+    st.markdown("### Detailed Data View")
+    st.dataframe(df_last)
+    time.sleep(1)   
+    
