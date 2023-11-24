@@ -2,6 +2,7 @@ import streamlit as st
 from dynamodb_connection import DynamoDBConnection
 import pandas as pd
 import time
+import boto3
 
 # Crear el cliente de DynamoDB usando boto3
 dynamodb = boto3.resource('DynamoDB', region_name='us-east-1')  # Reemplaza 'tu_region' con la región de tu tabla
