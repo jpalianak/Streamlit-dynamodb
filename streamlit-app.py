@@ -8,7 +8,7 @@ placeholder = st.empty()
 
 def get_data():
   conn = st.connection("DynamoDBTable", type=DynamoDBConnection, api_type="pandas", table_name="DynamoDBTable")
-  df = conn
+  df = conn.get_data()
   df['Date_num'] = pd.to_datetime(df['Date']).astype('int64') // 10**9
   return df
 
