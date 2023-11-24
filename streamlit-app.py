@@ -76,7 +76,7 @@ with placeholder.container():
   
     with fig_col1:
         st.markdown("### First Chart")
-        fig = px.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
+        fig = px.histogram(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
         st.write(fig)
     with fig_col2:
         st.markdown("### Second Chart")
