@@ -5,7 +5,7 @@ import time
 import boto3
 
 # Crear el cliente de DynamoDB usando boto3
-dynamodb = boto3.resource('DynamoDB', region_name='us-east-1')  # Reemplaza 'tu_region' con la región de tu tabla
+dynamodb = boto3.resource('dynamodb', region_name='us-east-1')  # Reemplaza 'tu_region' con la región de tu tabla
 table_name = 'DynamoDBTable'  # Reemplaza 'nombre_de_la_tabla' con el nombre de tu tabla en DynamoDB
 
 # Obtener la tabla de DynamoDB
