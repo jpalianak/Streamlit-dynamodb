@@ -67,9 +67,9 @@ with placeholder.container():
     kpi3.metric(label="A/C Balance ＄", value= f"$ {round(balance,2)} ", delta= - round(balance/count_married) * 100)
   
     # Reemplazamos el contenido del placeholder con la 
-    placeholder.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
-    placeholder.markdown("### Detailed Data View")
-    placeholder.dataframe(df_last)
+    #placeholder.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
+    #placeholder.markdown("### Detailed Data View")
+    #placeholder.dataframe(df_last)
 
     # create two columns for charts 
     fig_col1, fig_col2 = st.columns(2)
