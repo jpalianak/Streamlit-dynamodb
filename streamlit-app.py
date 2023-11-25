@@ -81,6 +81,7 @@ with placeholder.container():
         st.markdown("### First Chart")
     #    # fig = px.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
         fig = px.line(data_frame=df_last, x='Date', y='Ratio')
+        fig.update_traces(textposition="bottom right")
         st.write(fig)
     with fig_col2:
         st.markdown("### Second Chart")
