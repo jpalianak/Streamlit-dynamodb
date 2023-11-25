@@ -5,10 +5,10 @@ import time
 import boto3
 import plotly.express as px # interactive charts 
 
+st.set_page_config(layout="wide")
+
 # Creamos un placeholder inicial vacío
 placeholder = st.empty()
-
-placeholder.set_page_config(layout="wide")
 
 def get_data():
   # Crear el cliente de DynamoDB usando boto3
