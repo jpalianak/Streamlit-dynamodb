@@ -8,7 +8,7 @@ import plotly.express as px # interactive charts
 # Creamos un placeholder inicial vacío
 placeholder = st.empty()
 
-st.set_option('wideMode' , True)
+st.set_page_config(layout="wide")
 
 def get_data():
   # Crear el cliente de DynamoDB usando boto3
