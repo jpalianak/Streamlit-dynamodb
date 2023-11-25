@@ -8,6 +8,8 @@ import plotly.express as px # interactive charts
 # Creamos un placeholder inicial vacío
 placeholder = st.empty()
 
+st.set_option('wideMode' , True)
+
 def get_data():
   # Crear el cliente de DynamoDB usando boto3
   dynamodb = boto3.resource('dynamodb', region_name='us-east-1')  # Reemplaza 'tu_region' con la región de tu tabla
