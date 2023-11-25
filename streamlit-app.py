@@ -83,7 +83,7 @@ with placeholder.container():
     with fig_col2:
         st.markdown("### Second Chart")
         #fig2 = px.histogram(data_frame=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
-        fig = px.histogram(data_frame=df_last, x='Date', y='Ratio')
+        fig2 = px.histogram(data_frame=df_last, x='Date', y='Ratio')
         st.write(fig2)
     st.markdown("### Detailed Data View")
     st.dataframe(df_last)
