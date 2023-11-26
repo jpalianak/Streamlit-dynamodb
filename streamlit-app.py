@@ -61,7 +61,7 @@ with placeholder.container():
     # Obtenemos los nuevos datos
     df_last = compute_movement()
     
-    st.sidebar.markdown('### Seleccione los parametros de visualización')
+    st.sidebar.markdown('## Seleccione los parametros de visualización')
 
     # create three columns
     kpi1, kpi2, kpi3 = st.columns(3)
