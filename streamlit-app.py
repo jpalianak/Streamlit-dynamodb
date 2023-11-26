@@ -1,4 +1,4 @@
-import streamlit as st
+oluimport streamlit as st
 #from dynamodb_connection import DynamoDBConnection
 import pandas as pd
 import time
@@ -84,12 +84,12 @@ with placeholder.container():
     row1_spacer1,fig_col1,row1_spacer2 = st.columns((.3, 10, .1,))
   
     with fig_col1:
-        st.markdown("### First Chart")
+        st.markdown("### Evolucion de la Productividad")
         fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
         fig.update_layout(width=1200)
         fig.update_layout(height=400)
         st.write(fig)
     st.markdown("### Detailed Data View")
-    st.dataframe(df_last)
+    st.dataframe(df_last,width=1200, height=400)
     time.sleep(1)   
     
