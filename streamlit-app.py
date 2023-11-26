@@ -69,11 +69,11 @@ with placeholder.container():
 
     # fill in those three columns with respective metrics or KPIs 
     with kpi1:
-        kpi1.metric(label="### Productividad Diaria", value=100%, delta=80)
+        kpi1.metric(label="### Productividad Diaria", value="100%", delta=80)
     with kpi2:
-        kpi2.metric(label="Productividad Semanal", value=100%, delta=-50)
+        kpi2.metric(label="Productividad Semanal", value="100%", delta=-50)
     with kpi3:
-        kpi3.metric(label="Productividad Mensual", value=100%, delta=10)
+        kpi3.metric(label="Productividad Mensual", value="100%", delta=10)
   
     # Reemplazamos el contenido del placeholder con la 
     #placeholder.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
