@@ -76,7 +76,7 @@ with placeholder.container():
         st.markdown("#### Pruductividad Mensual")
 
     # create three columns
-     row0_spacer1, kpi1, row0_spacer2, kpi2, row0_spacer3, kpi3 = st.columns((.5, 3, .1, 3, .1, 3))
+     row1_spacer1, kpi1, row1_spacer2, kpi2, row1_spacer3, kpi3 = st.columns((.5, 3, .1, 3, .1, 3))
 
     # fill in those three columns with respective metrics or KPIs 
     with kpi1:
