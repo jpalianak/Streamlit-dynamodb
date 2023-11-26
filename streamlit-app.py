@@ -60,6 +60,8 @@ with placeholder.container():
       
     # Obtenemos los nuevos datos
     df_last = compute_movement()
+    
+    st.sidebar.text('Side Bar')
 
     # create three columns
     kpi1, kpi2, kpi3 = st.columns(3)
