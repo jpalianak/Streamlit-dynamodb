@@ -1,4 +1,4 @@
-oluimport streamlit as st
+import streamlit as st
 #from dynamodb_connection import DynamoDBConnection
 import pandas as pd
 import time
