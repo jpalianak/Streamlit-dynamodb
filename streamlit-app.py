@@ -69,13 +69,13 @@ with placeholder.container():
 
     # fill in those three columns with respective metrics or KPIs 
     with kpi1:
-        st.markdown("### Pruductividad Diaria ⏳")
+        st.markdown("#### Pruductividad Diaria")
         kpi1.metric(label="", value=100, delta=80)
     with kpi2:
-        st.markdown("### Pruductividad Semanall ⏳")
+        st.markdown("#### Pruductividad Semanall")
         kpi2.metric(label="", value=100, delta=-50)
     with kpi3:
-        st.markdown("### Pruductividad Mensual ⏳")
+        st.markdown("#### Pruductividad Mensual")
         kpi3.metric(label="", value=100, delta=10)
   
     # Reemplazamos el contenido del placeholder con la 
