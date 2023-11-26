@@ -93,7 +93,7 @@ with placeholder.container():
     # create two columns for charts 
     row2_spacer1,df_col1,row2_spacer2 = st.columns((.3, 10, .1,))
   
-    with df_col1
+    with df_col1:
         st.markdown("### Detailed Data View")
         st.dataframe(df_last,width=1200, height=400)
 
