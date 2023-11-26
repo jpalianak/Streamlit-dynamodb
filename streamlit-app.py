@@ -81,7 +81,7 @@ with placeholder.container():
     #placeholder.dataframe(df_last)
 
     # create two columns for charts 
-    row0_spacer1,fig_col1,row0_spacer1 = st.columns((.1, 10, .1,))
+    row1_spacer1,fig_col1,row1_spacer2 = st.columns((.1, 10, .1,))
   
     with fig_col1:
         st.markdown("### First Chart")
