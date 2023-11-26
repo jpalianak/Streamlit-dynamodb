@@ -4,7 +4,7 @@ import pandas as pd
 import time
 import boto3
 import plotly.express as px
-from streamlit_echarts import st_echarts
+
 
 st.set_page_config(layout="wide")
 
