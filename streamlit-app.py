@@ -69,12 +69,14 @@ with placeholder.container():
 
     # fill in those three columns with respective metrics or KPIs 
     with kpi1:
-        st.markdown("## Pruductividad diaria ⏳")
+        st.markdown("### Pruductividad Diaria ⏳")
         kpi1.metric(label="## Pruductividad diaria ⏳", value=100, delta=80)
     with kpi2:
-        kpi2.metric(label="## Pruductividad semanal⏳", value=100, delta=-50)
+        st.markdown("### Pruductividad Semanall ⏳")
+        kpi2.metric(value=100, delta=-50)
     with kpi3:
-        kpi3.metric(label="## Pruductividad mensual ⏳", value=100, delta=10)
+        st.markdown("### Pruductividad Mensual ⏳")
+        kpi3.metric(value=100, delta=10)
   
     # Reemplazamos el contenido del placeholder con la 
     #placeholder.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
