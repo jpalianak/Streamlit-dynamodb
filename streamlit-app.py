@@ -65,17 +65,25 @@ with placeholder.container():
     st.sidebar.markdown('## Seleccione los parametros de visualización')
 
     # create three columns
-    row0_spacer1, kpi1, row0_spacer2, kpi2, row0_spacer3, kpi3 = st.columns((.5, 3, .1, 3, .1, 3))
+    row0_spacer1, title1, row0_spacer2, title1, row0_spacer3, title1 = st.columns((.5, 3, .1, 3, .1, 3))
+
+    # fill in those three columns with respective metrics or KPIs 
+    with title1:
+        st.markdown("#### Pruductividad Diaria")
+    with title2:
+        st.markdown("#### Pruductividad Semanal")
+    with title3:
+        st.markdown("#### Pruductividad Mensual")
+
+    # create three columns
+     row0_spacer1, kpi1, row0_spacer2, kpi2, row0_spacer3, kpi3 = st.columns((.5, 3, .1, 3, .1, 3))
 
     # fill in those three columns with respective metrics or KPIs 
     with kpi1:
-        st.markdown("#### Pruductividad Diaria")
         kpi1.metric(label="", value=100, delta=80)
     with kpi2:
-        st.markdown("#### Pruductividad Semanall")
         kpi2.metric(label="", value=100, delta=-50)
     with kpi3:
-        st.markdown("#### Pruductividad Mensual")
         kpi3.metric(label="", value=100, delta=10)
   
     # Reemplazamos el contenido del placeholder con la 
