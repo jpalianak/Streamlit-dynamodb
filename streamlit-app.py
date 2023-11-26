@@ -81,18 +81,13 @@ with placeholder.container():
     #placeholder.dataframe(df_last)
 
     # create two columns for charts 
-    fig_col1, fig_col2 = st.columns(2)
+    fig_col1 = st.columns(1)
   
     with fig_col1:
         st.markdown("### First Chart")
     #    # fig = px.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
         fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
         st.write(fig)
-    with fig_col2:
-        st.markdown("### Second Chart")
-        #fig2 = px.histogram(data_frame=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
-        fig2 = px.bar(data_frame=df_last, x='Date', y='Ratio',text_auto='.2s')
-        st.write(fig2)
     st.markdown("### Detailed Data View")
     st.dataframe(df_last)
     time.sleep(1)   
