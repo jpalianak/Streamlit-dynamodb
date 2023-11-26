@@ -3,7 +3,8 @@ import streamlit as st
 import pandas as pd
 import time
 import boto3
-import plotly.express as px # interactive charts 
+import plotly.express as px
+from streamlit_echarts import st_echarts
 
 st.set_page_config(layout="wide")
 
@@ -64,7 +65,7 @@ with placeholder.container():
     st.sidebar.markdown('## Seleccione los parametros de visualización')
 
     # create three columns
-    kpi1, kpi2, kpi3 = st.columns(3)
+    kpi1, kpi1_2, kpi2, kpi2_3, kpi3 = st.columns((.1,3, .1, 3, .1, 3))
 
     # fill in those three columns with respective metrics or KPIs 
     kpi1.metric(label="Pruductividad diaria ⏳", value=100, delta=80)
