@@ -65,7 +65,7 @@ with placeholder.container():
     st.sidebar.markdown('## Seleccione los parametros de visualización')
 
     # create three columns
-    row0_spacer1, kpi1, row0_spacer2, kpi2, row0_spacer3, kpi3 = st.columns((.2, 3, .1, 3, .1, 3))
+    row0_spacer1, kpi1, row0_spacer2, kpi2, row0_spacer3, kpi3 = st.columns((.5, 3, .1, 3, .1, 3))
 
     # fill in those three columns with respective metrics or KPIs 
     kpi1.metric(label="Pruductividad diaria ⏳", value=100, delta=80)
