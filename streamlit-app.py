@@ -85,8 +85,9 @@ with placeholder.container():
   
     with fig_col1:
         st.markdown("### First Chart")
-    #   fig = px.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
         fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
+        fig.update_layout(height=800)
+        #st.plotly_chart(fig,height=800)
         st.write(fig)
     st.markdown("### Detailed Data View")
     st.dataframe(df_last)
