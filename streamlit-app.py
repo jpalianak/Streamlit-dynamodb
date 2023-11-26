@@ -65,7 +65,7 @@ with placeholder.container():
     st.sidebar.markdown('## Seleccione los parametros de visualización')
 
     # create three columns
-    row0_spacer1, title1, row0_spacer2, title1, row0_spacer3, title1 = st.columns((.5, 3, .1, 3, .1, 3))
+    row0_spacer1, title1, row0_spacer2, title2, row0_spacer3, title3 = st.columns((.5, 3, .1, 3, .1, 3))
 
     # fill in those three columns with respective metrics or KPIs 
     with title1:
