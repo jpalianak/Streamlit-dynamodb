@@ -65,26 +65,15 @@ with placeholder.container():
     st.sidebar.markdown('## Seleccione los parametros de visualización')
 
     # create three columns
-    row0_spacer1, title1, row0_spacer2, title2, row0_spacer3, title3 = st.columns((.5, 3, .1, 3, .1, 3))
-
-    # fill in those three columns with respective metrics or KPIs 
-    with title1:
-        st.markdown("#### Pruductividad Diaria")
-    with title2:
-        st.markdown("#### Pruductividad Semanal")
-    with title3:
-        st.markdown("#### Pruductividad Mensual")
-
-    # create three columns
-    row1_spacer1, kpi1, row1_spacer2, kpi2, row1_spacer3, kpi3 = st.columns((.5, 3, .1, 3, .1, 3))
+    row0_spacer1, kpi1, row0_spacer2, kpi2, row0_spacer3, kpi3 = st.columns((.5, 3, .1, 3, .1, 3))
 
     # fill in those three columns with respective metrics or KPIs 
     with kpi1:
-        kpi1.metric(label="", value=100, delta=80)
+        kpi1.metric(label="Productividad Diaria", value=100, delta=80)
     with kpi2:
-        kpi2.metric(label="", value=100, delta=-50)
+        kpi2.metric(label="Productividad Semanal", value=100, delta=-50)
     with kpi3:
-        kpi3.metric(label="", value=100, delta=10)
+        kpi3.metric(label="Productividad Mensual", value=100, delta=10)
   
     # Reemplazamos el contenido del placeholder con la 
     #placeholder.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
