@@ -81,12 +81,12 @@ with placeholder.container():
     #placeholder.dataframe(df_last)
 
     # create two columns for charts 
-    row1_spacer1,fig_col1,row1_spacer2 = st.columns((.1, 10, .1,))
+    row1_spacer1,fig_col1,row1_spacer2 = st.columns((.3, 10, .1,))
   
     with fig_col1:
         st.markdown("### First Chart")
         fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
-        fig.update_layout(width=1000)
+        fig.update_layout(width=1200)
         fig.update_layout(height=400)
         st.write(fig)
     st.markdown("### Detailed Data View")
