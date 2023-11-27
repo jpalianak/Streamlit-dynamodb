@@ -107,7 +107,7 @@ with placeholder.container():
     row2_spacer1,df_col1,row2_spacer2 = st.columns((.3, 10, .1,))
   
     with df_col1:
-        st.markdown("### Detailed Data View")
+        st.markdown("### Detalle de los registros")
         st.dataframe(df_last.tail(5),width=1200, height=200)
 
     time.sleep(1)   
