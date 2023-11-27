@@ -62,10 +62,11 @@ with placeholder.container():
     # Obtenemos los nuevos datos
     df_last = compute_movement()
     
-    st.sidebar.markdown('## Seleccione los parametros de visualización')
-    option = st.selectbox(
-    'Seleccione la maquina:',
-    ('Maquina 1', 'Maquina 2', 'Maquina 3'))
+    with st.sidebar:
+      st.sidebar.markdown('## Seleccione los parametros de visualización')
+      option = st.selectbox(
+        'Seleccione la maquina:',
+        ('Maquina 1', 'Maquina 2', 'Maquina 3'))
 
     # create three columns
     row0_spacer1, kpi1, row0_spacer2, kpi2, row0_spacer3, kpi3 = st.columns((.5, 3, .1, 3, .1, 3))
