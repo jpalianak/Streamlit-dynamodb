@@ -68,7 +68,6 @@ with placeholder.container():
       option = st.selectbox(
         'Seleccione la maquina:',
         ('Maquina 1', 'Maquina 2', 'Maquina 3'))
-      st.write('Maquina seleccionada:', option)
       st.write('')
       d_ini = st.date_input("Periodo a evaluar. Desde:", datetime.date(2019, 7, 6))
       st.write('Desde: ', d_ini)
