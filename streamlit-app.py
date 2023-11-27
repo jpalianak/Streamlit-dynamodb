@@ -86,7 +86,8 @@ with placeholder.container():
         kpi2.metric(label="Productividad Semanal", value="100%", delta=-50)
     with kpi3:
         kpi3.metric(label="Productividad Mensual", value="100%", delta=10)
-  
+    st.write('')
+    st.write('')
     # Reemplazamos el contenido del placeholder con la 
     #placeholder.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
     #placeholder.markdown("### Detailed Data View")
