@@ -108,7 +108,7 @@ with placeholder.container():
   
     with df_col1:
         st.markdown("### Detailed Data View")
-        st.dataframe(df_last.tail(5),width=1200, height=400)
+        st.dataframe(df_last.tail(5),width=1200, height=200)
 
     time.sleep(1)   
     
