@@ -70,7 +70,7 @@ with placeholder.container():
         ('Maquina 1', 'Maquina 2', 'Maquina 3'))
       d_ini = st.date_input("Periodo a evaluar. Desde:", datetime.date(2019, 7, 6))
       st.write('Desde: ', d_ini)
-      d_fin = st.date_input("Periodo a evaluar. Desde:", datetime.date(2019, 7, 6))
+      d_fin = st.date_input("Periodo a evaluar. Hasta:", datetime.date(2019, 7, 7))
       st.write('Hasta: ', d_fin)
 
     # create three columns
