@@ -88,15 +88,12 @@ with placeholder.container():
         kpi3.metric(label="Productividad Mensual", value="100%", delta=10)
     st.write('')
     st.write('')
-    # Reemplazamos el contenido del placeholder con la 
-    #placeholder.line_chart(data=df_last, x='Date', y='Ratio', color=["#FF0000"], width=800, height=400, use_container_width=False)
-    #placeholder.markdown("### Detailed Data View")
-    #placeholder.dataframe(df_last)
 
     # create two columns for charts 
     row1_spacer1,fig_col1,row1_spacer2 = st.columns((.3, 10, .1,))
   
     with fig_col1:
+        df_last['Ratio'] = df_last['Ratio'] *100
         st.markdown("### Evolucion de la Productividad")
         fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
         fig.update_layout(width=1200)
