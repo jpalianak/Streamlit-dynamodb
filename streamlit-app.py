@@ -69,9 +69,9 @@ with placeholder.container():
         'Seleccione la maquina:',
         ('Maquina 1', 'Maquina 2', 'Maquina 3'))
       d_ini = st.date_input("Periodo a evaluar. Desde:", datetime.date(2019, 7, 6))
-      st.write('Your birthday is:', d_ini)
+      st.write('Desde: ', d_ini)
       d_fin = st.date_input("Periodo a evaluar. Desde:", datetime.date(2019, 7, 6))
-      st.write('Your birthday is:', d_fin)
+      st.write('Hasta: ', d_fin)
 
     # create three columns
     row0_spacer1, kpi1, row0_spacer2, kpi2, row0_spacer3, kpi3 = st.columns((.5, 3, .1, 3, .1, 3))
