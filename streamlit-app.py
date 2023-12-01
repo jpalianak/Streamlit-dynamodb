@@ -37,10 +37,7 @@ def compute_movement(maquina,d_ini,d_fin):
   # Calculo del centro del bounding box
   df_orig['Xcenter'] = df_orig['Xmax'] - df_orig['Xmin']
   df_orig['Ycenter'] = df_orig['Ymax'] - df_orig['Ymin']
-
-  print(df_orig['Date_num'].format)
-  print(d_ini.format)
-        
+       
   # Filtro del dataframe segun los parametros seleccionados
   df_filter = df_orig[(df_orig['Date_num'] >= pd.to_datetime(d_ini).astype('int64')) & (df_orig['Date_num'] <= pd.to_datetime(d_fin).astype('int64'))]
 
