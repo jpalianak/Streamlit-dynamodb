@@ -31,8 +31,6 @@ def get_data():
   return df
   
 def compute_movement(maquina,d_ini,d_fin): 
-  # Obtenemos los datos
-  df_orig = get_data()
 
   # Calculo del centro del bounding box
   df_orig['Xcenter'] = df_orig['Xmax'] - df_orig['Xmin']
@@ -62,6 +60,8 @@ def compute_movement(maquina,d_ini,d_fin):
   return df_new
 
 with placeholder.container():
+    # Obtenemos los datos
+    df_orig = get_data()
   
     with st.sidebar:
       st.sidebar.markdown('## Seleccione los parametros de visualización')
@@ -71,15 +71,22 @@ with placeholder.container():
       st.write('Maquina seleccionada:', maquina)
       st.write('')
       st.write('')
-      d_ini = st.date_input("Periodo a evaluar. Desde:", datetime.date(2023, 11, 24))
+      d_ini = st.date_input("Periodo a evaluar. Desde:", 
+              min_value=df_orig['Date'].min,
+              max_value=df_orig['Date'].max,
+              value=datetime.datetime.now())
       st.write('Desde: ', d_ini)
       d_ini_num = pd.to_datetime(d_ini).astype('int64') // 10**9
-      d_fin = st.date_input("Periodo a evaluar. Hasta:", datetime.date(2023, 11, 25))
+      
+      d_fin = st.date_input("Periodo a evaluar. Desde:", 
+              min_value=df_orig['Date'].min,
+              max_value=df_orig['Date'].max,
+              value=datetime.datetime.now())
       st.write('Hasta: ', d_fin)
       d_fin_num = pd.to_datetime(d_fin).astype('int64') // 10**9
 
     # Obtenemos los nuevos datos
-    df_last = compute_movement(maquina,d_ini_num,d_fin_num)
+    df_last = compute_movement(df_orig,maquina,d_ini_num,d_fin_num)
   
     # create three columns
     row0_spacer1, kpi1, row0_spacer2, kpi2, row0_spacer3, kpi3 = st.columns((.5, 3, .1, 3, .1, 3))
