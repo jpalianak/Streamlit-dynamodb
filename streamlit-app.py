@@ -78,6 +78,9 @@ with placeholder.container():
       d_fin = st.date_input("Periodo a evaluar. Hasta:", datetime.date(2019, 7, 7))
       st.write('Hasta: ', d_fin)
 
+    # Obtenemos los nuevos datos
+    df_last = compute_movement(maquina,d_ini,d_fin)
+  
     # create three columns
     row0_spacer1, kpi1, row0_spacer2, kpi2, row0_spacer3, kpi3 = st.columns((.5, 3, .1, 3, .1, 3))
 
@@ -108,9 +111,6 @@ with placeholder.container():
     with df_col1:
         st.markdown("### Tabla de registros")
         st.dataframe(df_last.tail(5),width=1200, height=200)
-  
-  # Obtenemos los nuevos datos
-    df_last = compute_movement(maquina,d_ini,d_fin)
-  
+   
     time.sleep(1)   
     
