@@ -41,7 +41,7 @@ def compute_movement(maquina,d_ini,d_fin):
   st.write(type(df_orig['Date_num'])
        
   # Filtro del dataframe segun los parametros seleccionados
-  df_filter = df_orig[(df_orig['Date_num'] >= pd.to_datetime(d_ini)) & (df_orig['Date_num'] <= pd.to_datetime(d_fin))]
+  df_filter = df_orig[(df_orig['Date_num'] >= d_ini) & (df_orig['Date_num'] <= d_fin)]
 
   df_new['Date'] = df_filter['Date'].iloc[1:]
   df_new['Date_diff'] = df_filter['Date_num'] - df_filter['Date_num'].shift()
