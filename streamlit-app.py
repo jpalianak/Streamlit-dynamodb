@@ -75,8 +75,10 @@ with placeholder.container():
       st.write('')
       d_ini = st.date_input("Periodo a evaluar. Desde:", datetime.date(2019, 7, 6))
       st.write('Desde: ', d_ini)
+      d_ini = pd.to_datetime(d_ini).astype('int64') // 10**9
       d_fin = st.date_input("Periodo a evaluar. Hasta:", datetime.date(2019, 7, 7))
       st.write('Hasta: ', d_fin)
+      d_fin = pd.to_datetime(d_fin).astype('int64') // 10**9
 
     # Obtenemos los nuevos datos
     df_last = compute_movement(maquina,d_ini,d_fin)
