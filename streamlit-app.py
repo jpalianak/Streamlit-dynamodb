@@ -72,15 +72,15 @@ with placeholder.container():
       st.write('')
       st.write('')
       d_ini = st.date_input("Periodo a evaluar. Desde:", 
-              min_value=df_orig['Date'].min(),
-              max_value=df_orig['Date'].max(),
+              min_value=pd.to_datetime(df_orig['Date'].min()),
+              max_value=pd.to_datetime(df_orig['Date'].max()),
               value=datetime.datetime.now())
       st.write('Desde: ', d_ini)
       d_ini_num = pd.to_datetime(d_ini).astype('int64') // 10**9
       
       d_fin = st.date_input("Periodo a evaluar. Desde:", 
-              min_value=df_orig['Date'].min(),
-              max_value=df_orig['Date'].max(),
+              min_value=pd.to_datetime(df_orig['Date'].min()),
+              max_value=pd.to_datetime(df_orig['Date'].max()),
               value=datetime.datetime.now())
       st.write('Hasta: ', d_fin)
       d_fin_num = pd.to_datetime(d_fin).astype('int64') // 10**9
