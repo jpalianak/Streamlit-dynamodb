@@ -30,22 +30,27 @@ def get_data():
   df = df.sort_values(by='Date_num')
   return df
   
-
-def compute_movement(): 
+def compute_movement(maquina,d_ini,d_fin): 
+  # Obtenemos los datos
   df_orig = get_data()
+
+  # Calculo del centro del bounding box
   df_orig['Xcenter'] = df_orig['Xmax'] - df_orig['Xmin']
   df_orig['Ycenter'] = df_orig['Ymax'] - df_orig['Ymin']
 
+  # Filtro del dataframe segun los parametros seleccionados
+  df_filter = df_orig[(df_orig['Date']) >= d_ini) & (df_orig['Date']) <= d_fin)]
+
   df_new = pd.DataFrame()
 
-  df_new['Date'] = df_orig['Date'].iloc[1:]
-  df_new['Date_diff'] = df_orig['Date_num'] - df_orig['Date_num'].shift()
+  df_new['Date'] = df_filter['Date'].iloc[1:]
+  df_new['Date_diff'] = df_filter['Date_num'] - df_filter['Date_num'].shift()
 
   threshold = 0.001
-  xcenter_diff = abs(df_orig['Xcenter'] -
-                     df_orig['Xcenter'].shift()).iloc[1:]
-  ycenter_diff = abs(df_orig['Ycenter'] -
-                     df_orig['Ycenter'].shift()).iloc[1:]
+  xcenter_diff = abs(df_filter['Xcenter'] -
+                     df_filter['Xcenter'].shift()).iloc[1:]
+  ycenter_diff = abs(df_filter['Ycenter'] -
+                     df_filter['Ycenter'].shift()).iloc[1:]
 
   df_new['Movement'] = ['SI' if x > threshold or y >
                         threshold else 'NO' for x, y in zip(xcenter_diff, ycenter_diff)]
@@ -59,13 +64,10 @@ def compute_movement():
   return df_new
 
 with placeholder.container():
-      
-    # Obtenemos los nuevos datos
-    df_last = compute_movement()
-    
+  
     with st.sidebar:
       st.sidebar.markdown('## Seleccione los parametros de visualización')
-      option = st.selectbox(
+      maquina = st.selectbox(
         'Seleccione la maquina:',
         ('Maquina 1', 'Maquina 2', 'Maquina 3'))
       st.write('Maquina seleccionada:', option)
@@ -106,6 +108,9 @@ with placeholder.container():
     with df_col1:
         st.markdown("### Tabla de registros")
         st.dataframe(df_last.tail(5),width=1200, height=200)
-
+  
+  # Obtenemos los nuevos datos
+    df_last = compute_movement(maquina,d_ini,d_fin)
+  
     time.sleep(1)   
     
