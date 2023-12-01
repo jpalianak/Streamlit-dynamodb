@@ -67,10 +67,10 @@ with placeholder.container():
   
     with st.sidebar:
       st.sidebar.markdown('## Seleccione los parametros de visualización')
-      option1 = st.selectbox(
+      maquina = st.selectbox(
         'Seleccione la maquina:',
         ('Maquina 1', 'Maquina 2', 'Maquina 3'))
-      st.write('Maquina seleccionada:', option)
+      st.write('Maquina seleccionada:', maquina)
       st.write('')
       st.write('')
       d_ini = st.date_input("Periodo a evaluar. Desde:", datetime.date(2019, 7, 6))
