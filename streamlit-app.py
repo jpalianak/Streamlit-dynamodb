@@ -67,7 +67,7 @@ with placeholder.container():
   
     with st.sidebar:
       st.sidebar.markdown('## Seleccione los parametros de visualización')
-      maquina = st.selectbox(
+      option1 = st.selectbox(
         'Seleccione la maquina:',
         ('Maquina 1', 'Maquina 2', 'Maquina 3'))
       st.write('Maquina seleccionada:', option)
