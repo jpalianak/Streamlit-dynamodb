@@ -37,9 +37,7 @@ def compute_movement(maquina,d_ini,d_fin):
   # Calculo del centro del bounding box
   df_orig['Xcenter'] = df_orig['Xmax'] - df_orig['Xmin']
   df_orig['Ycenter'] = df_orig['Ymax'] - df_orig['Ymin']
-
-  st.write(type(df_orig['Date_num'])
-       
+   
   # Filtro del dataframe segun los parametros seleccionados
   df_filter = df_orig[(df_orig['Date_num'] >= d_ini) & (df_orig['Date_num'] <= d_fin)]
 
@@ -73,10 +71,10 @@ with placeholder.container():
       st.write('Maquina seleccionada:', maquina)
       st.write('')
       st.write('')
-      d_ini = st.date_input("Periodo a evaluar. Desde:", datetime.date(2019, 7, 6))
+      d_ini = st.date_input("Periodo a evaluar. Desde:", datetime.date(2023, 11, 24))
       st.write('Desde: ', d_ini)
       d_ini = pd.to_datetime(d_ini).astype('int64') // 10**9
-      d_fin = st.date_input("Periodo a evaluar. Hasta:", datetime.date(2019, 7, 7))
+      d_fin = st.date_input("Periodo a evaluar. Hasta:", datetime.date(2023, 11, 25))
       st.write('Hasta: ', d_fin)
       d_fin = pd.to_datetime(d_fin).astype('int64') // 10**9
 
