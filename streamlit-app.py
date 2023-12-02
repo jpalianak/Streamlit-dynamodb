@@ -73,8 +73,8 @@ with placeholder.container():
         st.write('')
         d_ini = st.date_input("Periodo a evaluar. Desde:",
                             value = datetime.date(2000, 6, 12),
-                            min_value = datetime.date(2000, 1, 12),
-                            max_value = datetime.date(2001, 1, 12))
+                            min_value = datetime.date(2000, 1, 10),
+                            max_value = datetime.date(2001, 1, 20))
         #st.write('Desde: ', d_ini)
         #d_ini_num = pd.to_datetime(d_ini).astype('int64') // 10**9
       
