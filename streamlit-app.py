@@ -78,10 +78,10 @@ with placeholder.container():
         #st.write('Desde: ', d_ini)
         #d_ini_num = pd.to_datetime(d_ini).astype('int64') // 10**9
       
-        d_fin = st.date_input("Periodo a evaluar. Hasta:",
+        d_fin = st.date_input("Periodo a evaluar. Desde:",
                             min_value=pd.to_datetime(df_orig['Date'].min()),
                             max_value=pd.to_datetime(df_orig['Date'].max()),
-                            value=pd.to_datetime(df_orig['Date'].max())
+                            value=pd.to_datetime(df_orig['Date'].min())
         #st.write('Hasta: ', d_fin)
         #d_fin_num = pd.to_datetime(d_fin).astype('int64') // 10**9
 
