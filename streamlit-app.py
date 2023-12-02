@@ -81,6 +81,7 @@ with placeholder.container():
   
     with st.sidebar:
       # Titulo del Sidebar  
+      st.sidebar.markdown('#### AIRBIZ DASHBOARD')
       st.sidebar.markdown('## Seleccione los parametros de visualización')
 
       # Selecbox para la seleccion de maquina
