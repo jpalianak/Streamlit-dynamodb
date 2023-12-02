@@ -71,7 +71,8 @@ with placeholder.container():
         st.write('Maquina seleccionada:', maquina)
         st.write('')
         st.write('')
-        d_ini = st.date_input("Periodo a evaluar. Desde:")
+        d_ini = st.date_input("Periodo a evaluar. Desde:",
+                             format="%dd-%mm-%yy")
 #                            min_value=pd.to_datetime(df_orig['Date'].min()),
 #                            max_value=pd.to_datetime(df_orig['Date'].max()),
 #                            value=pd.to_datetime(df_orig['Date'].min())
