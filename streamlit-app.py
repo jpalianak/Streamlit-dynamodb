@@ -38,7 +38,7 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
   df_orig['Ycenter'] = df_orig['Ymax'] - df_orig['Ymin']
    
   # Filtro del dataframe segun los parametros seleccionados
-  df_filter = df_orig[(df_orig['Date_num'] >= d_ini) & (df_orig['Date_num'] <= d_fin)]
+  df_filter = df_orig[(df_orig['Date'] >= d_ini) & (df_orig['Date'] <= d_fin)]
 
   df_new['Date'] = df_filter['Date'].iloc[1:]
   df_new['Date_diff'] = df_filter['Date_num'] - df_filter['Date_num'].shift()
