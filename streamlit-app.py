@@ -72,12 +72,12 @@ with placeholder.container():
         st.write('')
         st.write('')
         d_ini = st.date_input("Periodo a evaluar. Desde:",value='today')
-        st.write('Desde: ', d_ini)
-        d_ini_num = pd.to_datetime(d_ini).astype('int64') // 10**9
+        st.write('Desde: ', pd.to_datetime(d_ini))
+        #d_ini_num = pd.to_datetime(d_ini).astype('int64') // 10**9
       
         d_fin = st.date_input("Periodo a evaluar. Hasta:",value='today')
         st.write('Hasta: ', d_fin)
-        d_fin_num = pd.to_datetime(d_fin).astype('int64') // 10**9
+        #d_fin_num = pd.to_datetime(d_fin).astype('int64') // 10**9
 
     # Obtenemos los nuevos datos
     df_last = compute_movement(df_orig,maquina,d_ini_num,d_fin_num)
