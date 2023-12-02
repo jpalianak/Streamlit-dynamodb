@@ -113,7 +113,8 @@ with placeholder.container():
   
     with df_col1:
         st.markdown("### Tabla de registros")
-        st.dataframe(df_last.tail(5),width=1200, height=200)
+        st.dataframe(df_last,width=1200, height=500)
+        #st.dataframe(df_last.tail(5),width=1200, height=200)
    
     time.sleep(1)   
     
