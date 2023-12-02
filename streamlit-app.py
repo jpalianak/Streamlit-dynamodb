@@ -71,18 +71,12 @@ with placeholder.container():
         st.write('Maquina seleccionada:', maquina)
         st.write('')
         st.write('')
-        d_ini = st.date_input("Periodo a evaluar. Desde:",
-                            value = datetime.date(2000, 6, 12),
-                            min_value = datetime.date(2000, 1, 10),
-                            max_value = datetime.date(2001, 1, 20))
-        #st.write('Desde: ', d_ini)
+        d_ini = st.date_input("Periodo a evaluar. Desde:",value='today')
+        st.write('Desde: ', d_ini)
         #d_ini_num = pd.to_datetime(d_ini).astype('int64') // 10**9
       
-        d_fin = st.date_input("Periodo a evaluar. Hasta:")
-#                            min_value=pd.to_datetime(df_orig['Date'].min()),
-#                            max_value=pd.to_datetime(df_orig['Date'].max()),
-#                            value=pd.to_datetime(df_orig['Date'].max())
-        #st.write('Hasta: ', d_fin)
+        d_fin = st.date_input("Periodo a evaluar. Hasta:",value='today')
+        st.write('Hasta: ', d_fin)
         #d_fin_num = pd.to_datetime(d_fin).astype('int64') // 10**9
 
     # Obtenemos los nuevos datos
