@@ -30,7 +30,7 @@ def get_data():
   df = df.sort_values(by='Date_num')
   return df
   
-def compute_movement(maquina,d_ini,d_fin): 
+def compute_movement(df_orig,maquina,d_ini,d_fin): 
 
   # Calculo del centro del bounding box
   df_orig['Xcenter'] = df_orig['Xmax'] - df_orig['Xmin']
