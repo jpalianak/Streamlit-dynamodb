@@ -28,6 +28,7 @@ def get_data():
   df = pd.DataFrame(items)
   df['Date_num'] = pd.to_datetime(df['Date']).astype('int64') // 10**9
   df = df.sort_values(by='Date_num')
+  df['Date']= pd.to_datetime(df['Date']).dt.date
   return df
   
 def compute_movement(df_orig,maquina,d_ini,d_fin): 
