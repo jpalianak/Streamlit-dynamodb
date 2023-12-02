@@ -123,6 +123,7 @@ with placeholder.container():
       fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True,title='Evolucion de la Productividad')
       fig.update_layout(width=1200)
       fig.update_layout(height=400)
+      fig.update_yaxes(range=[0, 100]) 
       st.write(fig)
 
     row2_spacer1,df_col1,row2_spacer2 = st.columns((.3, 10, .1,))
