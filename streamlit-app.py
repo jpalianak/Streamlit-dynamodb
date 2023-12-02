@@ -1,5 +1,4 @@
 import streamlit as st
-#from dynamodb_connection import DynamoDBConnection
 import pandas as pd
 import time
 import boto3
@@ -39,6 +38,8 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
    
   # Filtro del dataframe segun los parametros seleccionados
   df_filter = df_orig[(df_orig['Date'] >= d_ini) & (df_orig['Date'] <= d_fin)]
+
+  df_new = pd.DataFrame()
 
   df_new['Date'] = df_filter['Date'].iloc[1:]
   df_new['Date_diff'] = df_filter['Date_num'] - df_filter['Date_num'].shift()
