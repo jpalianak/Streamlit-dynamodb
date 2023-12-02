@@ -81,8 +81,10 @@ with placeholder.container():
   
     with st.sidebar:
       # Titulo del Sidebar  
-      st.sidebar.markdown('#### AIRBIZ DASHBOARD')
-      st.sidebar.markdown('## Seleccione los parametros de visualización')
+      st.header('AIRBIZ DASHBOARD', divider='rainbow')
+      st.header('_Streamlit_ is :blue[cool] :sunglasses:')
+      #st.sidebar.markdown('#### AIRBIZ DASHBOARD')
+      #st.sidebar.markdown('## Seleccione los parametros de visualización')
 
       # Selecbox para la seleccion de maquina
       maquina = st.selectbox('Seleccione la maquina:',('Maquina 1', 'Maquina 2', 'Maquina 3'))
