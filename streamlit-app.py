@@ -120,7 +120,7 @@ with placeholder.container():
       st.write('')
       st.write('')
       st.markdown("### Evolucion de la Productividad")
-      fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
+      fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True,title='Evolucion de la Productividad')
       fig.update_layout(width=1200)
       fig.update_layout(height=400)
       st.write(fig)
