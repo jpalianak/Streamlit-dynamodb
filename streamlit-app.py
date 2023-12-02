@@ -82,7 +82,7 @@ with placeholder.container():
     with st.sidebar:
       # Titulo del Sidebar  
       st.header('AIRBIZ', divider='rainbow')
-      st.header(':blue[Tablero de control de pruductividad] :sunglasses:')
+      st.header(':blue[_Productivity dasboard_] :sunglasses:')
       #st.sidebar.markdown('#### AIRBIZ DASHBOARD')
       #st.sidebar.markdown('## Seleccione los parametros de visualización')
 
