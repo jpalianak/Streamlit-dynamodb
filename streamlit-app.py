@@ -27,8 +27,8 @@ def get_data():
   # Convertir los datos a un DataFrame de Pandas
   df = pd.DataFrame(items)
   df['Date_num'] = pd.to_datetime(df['Date']).astype('int64') // 10**9
+  df['Date'] = pd.to_datetime(df['Date']).dt.date
   df = df.sort_values(by='Date_num')
-  df['Date']= pd.to_datetime(df['Date']).dt.date
   return df
   
 def compute_movement(df_orig,maquina,d_ini,d_fin): 
@@ -73,7 +73,7 @@ with placeholder.container():
         st.write('')
         st.write('')
         d_ini = st.date_input("Periodo a evaluar. Desde:",value='today')
-        st.write('Desde: ', d_ini[0])
+        st.write('Desde: ', d_ini)
         #d_ini_num = pd.to_datetime(d_ini).astype('int64') // 10**9
       
         d_fin = st.date_input("Periodo a evaluar. Hasta:",value='today')
