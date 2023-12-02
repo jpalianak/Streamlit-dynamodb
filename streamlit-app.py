@@ -81,7 +81,7 @@ with placeholder.container():
         #d_fin_num = pd.to_datetime(d_fin).astype('int64') // 10**9
 
     # Obtenemos los nuevos datos
-    df_last = compute_movement(df_orig,maquina,d_ini_num,d_fin_num)
+    df_last = compute_movement(df_orig,maquina,d_ini,d_fin)
   
     # create three columns
     row0_spacer1, kpi1, row0_spacer2, kpi2, row0_spacer3, kpi3 = st.columns((.5, 3, .1, 3, .1, 3))
