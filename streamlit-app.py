@@ -72,7 +72,7 @@ with placeholder.container():
         st.write('')
         st.write('')
         d_ini = st.date_input("Periodo a evaluar. Desde:",value='today')
-        st.write('Desde: ', pd.to_datetime(d_ini).astype('int64'))
+        st.write('Desde: ', d_ini[0])
         #d_ini_num = pd.to_datetime(d_ini).astype('int64') // 10**9
       
         d_fin = st.date_input("Periodo a evaluar. Hasta:",value='today')
