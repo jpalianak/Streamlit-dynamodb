@@ -64,26 +64,26 @@ with placeholder.container():
     df_orig = get_data()
   
     with st.sidebar:
-      st.sidebar.markdown('## Seleccione los parametros de visualización')
-      maquina = st.selectbox(
-        'Seleccione la maquina:',
-        ('Maquina 1', 'Maquina 2', 'Maquina 3'))
-      st.write('Maquina seleccionada:', maquina)
-      st.write('')
-      st.write('')
-      d_ini = st.date_input("Periodo a evaluar. Desde:",
+        st.sidebar.markdown('## Seleccione los parametros de visualización')
+        maquina = st.selectbox(
+          'Seleccione la maquina:',
+          ('Maquina 1', 'Maquina 2', 'Maquina 3'))
+        st.write('Maquina seleccionada:', maquina)
+        st.write('')
+        st.write('')
+        d_ini = st.date_input("Periodo a evaluar. Desde:",
                             min_value=pd.to_datetime(df_orig['Date'].min()),
                             max_value=pd.to_datetime(df_orig['Date'].max()),
                             value=pd.to_datetime(df_orig['Date'].min())
-      # st.write('Desde: ', d_ini)
-      # d_ini_num = pd.to_datetime(d_ini).astype('int64') // 10**9
+        #st.write('Desde: ', d_ini)
+        #d_ini_num = pd.to_datetime(d_ini).astype('int64') // 10**9
       
-      d_fin = st.date_input("Periodo a evaluar. Hasta:",
+        d_fin = st.date_input("Periodo a evaluar. Hasta:",
                             min_value=pd.to_datetime(df_orig['Date'].min()),
                             max_value=pd.to_datetime(df_orig['Date'].max()),
                             value=pd.to_datetime(df_orig['Date'].max())
-      # st.write('Hasta: ', d_fin)
-      # d_fin_num = pd.to_datetime(d_fin).astype('int64') // 10**9
+        #st.write('Hasta: ', d_fin)
+        #d_fin_num = pd.to_datetime(d_fin).astype('int64') // 10**9
 
     # Obtenemos los nuevos datos
     df_last = compute_movement(df_orig,maquina,d_ini,d_fin)
