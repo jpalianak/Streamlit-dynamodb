@@ -72,7 +72,7 @@ with placeholder.container():
         st.write('')
         st.write('')
         d_ini = st.date_input("Periodo a evaluar. Desde:",
-                             format="%dd-%mm-%yy")
+                             value = pd.to_datetime('today', format='%Y-%m-%d'))
 #                            min_value=pd.to_datetime(df_orig['Date'].min()),
 #                            max_value=pd.to_datetime(df_orig['Date'].max()),
 #                            value=pd.to_datetime(df_orig['Date'].min())
