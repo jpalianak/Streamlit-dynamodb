@@ -26,7 +26,7 @@ def get_data():
   # Convertir los datos a un DataFrame de Pandas
   df = pd.DataFrame(items)
   df['Date_num'] = pd.to_datetime(df['Date']).astype('int64') // 10**9
-  df['Date'] = pd.to_datetime(df['Date']).dt.date
+  #df['Date'] = pd.to_datetime(df['Date']).dt.date
   df = df.sort_values(by='Date_num')
   return df
   
