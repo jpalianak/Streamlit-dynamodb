@@ -86,12 +86,9 @@ with placeholder.container():
       st.write('')
       st.write('')
       
-
       # Selecbox para la seleccion de maquina
       maquina = st.selectbox('Seleccione la maquina:',('Maquina 1', 'Maquina 2', 'Maquina 3'))
       st.write('Maquina seleccionada:', maquina)
-      st.write('')
-      st.write('')
       
       st.divider() 
       
