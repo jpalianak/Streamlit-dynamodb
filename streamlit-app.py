@@ -83,7 +83,7 @@ with placeholder.container():
       st.divider() 
       
       # Selecbox para la seleccion de maquina
-      maquina = st.selectbox(('Maquina 1', 'Maquina 2', 'Maquina 3'))
+      maquina = st.selectbox('',('Maquina 1', 'Maquina 2', 'Maquina 3'))
       #st.write('Maquina seleccionada:', maquina)
       
       st.divider() 
