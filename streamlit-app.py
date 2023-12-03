@@ -83,17 +83,18 @@ with placeholder.container():
       st.divider() 
       
       # Selecbox para la seleccion de maquina
-      st.markdown(r"$\small \color{white} \textbf{Seleccione la máquina}$")
+      st.markdown(r"$\normalsize \color{white} \textbf{Seleccione la máquina}$")
       maquina = st.selectbox('',('Maquina 1', 'Maquina 2', 'Maquina 3'))
       #st.write('Maquina seleccionada:', maquina)
       
       st.divider() 
       
       # Box para seleccionar la fecha inicial
-      d_ini = st.date_input("Periodo a evaluar. Desde:",value='today')
+      st.markdown(r"$\normalsize \color{white} \textbf{Periodo a evaluar}$")
+      d_ini = st.date_input("Desde:",value='today')
       #st.write('Desde: ', d_ini)
       # Box para seleccionar la fecha final
-      d_fin = st.date_input("Periodo a evaluar. Hasta:",value='today')
+      d_fin = st.date_input("Hasta:",value='today')
       #st.write('Hasta: ', d_fin)
 
       st.divider()
