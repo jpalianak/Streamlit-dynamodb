@@ -79,13 +79,7 @@ with placeholder.container():
     # Obtenemos los datos
     df_orig = get_data()
   
-    with st.sidebar:
-      # Titulo del Sidebar  
-      st.header(r"$\normalsize \color{white} \textbf{PRODUCTIVITY DASHBOARD}$")
-      st.header(r"$\footnotesize \color{#228B22} \textit{by AIRBIZ}$")
-
-      st.divider() 
-      
+    with st.sidebar:   
       # Selecbox para la seleccion de maquina
       maquina = st.selectbox('Seleccione la maquina:',('Maquina 1', 'Maquina 2', 'Maquina 3'))
       #st.write('Maquina seleccionada:', maquina)
@@ -103,7 +97,13 @@ with placeholder.container():
 
     # Obtenemos los nuevos datos
     df_last = compute_movement(df_orig,maquina,d_ini,d_fin)
-  
+
+    # Titulo del Sidebar  
+    st.header(r"$\normalsize \color{white} \textbf{PRODUCTIVITY DASHBOARD}$")
+    st.header(r"$\footnotesize \color{#228B22} \textit{by AIRBIZ}$")
+
+    st.divider() 
+    
     # Creacion de 3 columnas
     row0_spacer1, kpi1, row0_spacer2, kpi2, row0_spacer3, kpi3 = st.columns((.5, 3, .1, 3, .1, 3))
 
