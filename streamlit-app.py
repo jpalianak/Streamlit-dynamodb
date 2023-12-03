@@ -80,6 +80,8 @@ with placeholder.container():
     df_orig = get_data()
   
     with st.sidebar:   
+      st.divider() 
+      
       # Selecbox para la seleccion de maquina
       maquina = st.selectbox('Seleccione la maquina:',('Maquina 1', 'Maquina 2', 'Maquina 3'))
       #st.write('Maquina seleccionada:', maquina)
@@ -100,7 +102,7 @@ with placeholder.container():
 
     # Titulo del Sidebar  
     st.header(r"$\normalsize \color{white} \textbf{PRODUCTIVITY DASHBOARD}$")
-    st.header(r"$\footnotesize \color{#228B22} \textit{by AIRBIZ}$")
+    st.header(r"$\tiny \color{#228B22} \textit{by AIRBIZ}$")
 
     st.divider() 
     
