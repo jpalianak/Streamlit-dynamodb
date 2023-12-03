@@ -101,7 +101,7 @@ with placeholder.container():
     df_last = compute_movement(df_orig,maquina,d_ini,d_fin)
 
     # Titulo del Sidebar  
-    st.header(r"$\small \color{white} \textbf{PRODUCTIVITY DASHBOARD}$", divider='gray')
+    st.header(r"$\small \color{white} \textbf{Productivity Dashboard}$", divider='gray')
     #st.header(r"$\tiny \color{#228B22} \textit{by AIRBIZ}$")
     st.write('')
   
