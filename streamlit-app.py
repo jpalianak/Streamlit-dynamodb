@@ -92,11 +92,12 @@ with placeholder.container():
       st.write('Maquina seleccionada:', maquina)
       st.write('')
       st.write('')
-
+      
+      st.divider() 
+      
       # Box para seleccionar la fecha inicial
       d_ini = st.date_input("Periodo a evaluar. Desde:",value='today')
       st.write('Desde: ', d_ini)
-
       # Box para seleccionar la fecha final
       d_fin = st.date_input("Periodo a evaluar. Hasta:",value='today')
       st.write('Hasta: ', d_fin)
