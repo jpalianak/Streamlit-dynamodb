@@ -81,9 +81,8 @@ with placeholder.container():
   
     with st.sidebar:
       # Titulo del Sidebar  
-      #st.header(r"""<p style='font-family:"Arial";'><span style='font-size:48px;'>$\huge \text{AIRBIZ}$</span></p>""")
-      st.header(r"$\huge \text{AIRBIZ}$", divider='rainbow')
-      st.subheader(':blue[_Productivity dasboard_] :factory:')
+      st.header(r"$\huge \text{AIRBIZ}$")
+      st.header(':blue[_Productivity dasboard_]',divider='rainbow')
       st.write('')
       st.write('')
       
