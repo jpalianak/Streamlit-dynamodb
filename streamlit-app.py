@@ -88,16 +88,16 @@ with placeholder.container():
       
       # Selecbox para la seleccion de maquina
       maquina = st.selectbox('Seleccione la maquina:',('Maquina 1', 'Maquina 2', 'Maquina 3'))
-      st.write('Maquina seleccionada:', maquina)
+      #st.write('Maquina seleccionada:', maquina)
       
       st.divider() 
       
       # Box para seleccionar la fecha inicial
       d_ini = st.date_input("Periodo a evaluar. Desde:",value='today')
-      st.write('Desde: ', d_ini)
+      #st.write('Desde: ', d_ini)
       # Box para seleccionar la fecha final
       d_fin = st.date_input("Periodo a evaluar. Hasta:",value='today')
-      st.write('Hasta: ', d_fin)
+      #st.write('Hasta: ', d_fin)
 
     # Obtenemos los nuevos datos
     df_last = compute_movement(df_orig,maquina,d_ini,d_fin)
