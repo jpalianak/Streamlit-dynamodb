@@ -99,6 +99,8 @@ with placeholder.container():
       d_fin = st.date_input("Periodo a evaluar. Hasta:",value='today')
       #st.write('Hasta: ', d_fin)
 
+      st.divider()
+
     # Obtenemos los nuevos datos
     df_last = compute_movement(df_orig,maquina,d_ini,d_fin)
   
