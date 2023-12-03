@@ -103,9 +103,7 @@ with placeholder.container():
     # Titulo del Sidebar  
     st.header(r"$\small \color{white} \textbf{PRODUCTIVITY DASHBOARD}$", divider='gray')
     #st.header(r"$\tiny \color{#228B22} \textit{by AIRBIZ}$")
-
-    st.divider() 
-    
+  
     # Creacion de 3 columnas
     row0_spacer1, kpi1, row0_spacer2, kpi2, row0_spacer3, kpi3 = st.columns((.5, 3, .1, 3, .1, 3))
 
