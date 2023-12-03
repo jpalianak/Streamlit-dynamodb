@@ -83,6 +83,7 @@ with placeholder.container():
       st.divider() 
       
       # Selecbox para la seleccion de maquina
+      st.markdown(r"$\small \color{white} \textbf{Seleccione la máquina}$")
       maquina = st.selectbox('',('Maquina 1', 'Maquina 2', 'Maquina 3'))
       #st.write('Maquina seleccionada:', maquina)
       
