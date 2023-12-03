@@ -83,8 +83,8 @@ with placeholder.container():
       # Titulo del Sidebar  
       st.header(r"$\large \color{white} \textbf{Productivity Dashboard}$")
       st.header(r"$\small \color{#228B22} \textbf{by AIRBIZ}$",divider='rainbow')
-      st.write('')
-      st.write('')
+
+      st.divider() 
       
       # Selecbox para la seleccion de maquina
       maquina = st.selectbox('Seleccione la maquina:',('Maquina 1', 'Maquina 2', 'Maquina 3'))
