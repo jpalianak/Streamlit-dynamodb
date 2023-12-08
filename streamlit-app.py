@@ -78,9 +78,13 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
 # Obtenemos los datos
 df_orig = get_data()
   
-Maq1, Maq1, Maq1 = st.tabs(["Maquina 1", "Maquina 2", "Maquina 3"])
+Maq1, Maq2, Maq3 = st.tabs(["Maquina 1", "Maquina 2", "Maquina 3"])
 
-Maq1.header("Maquina 1")
+with Maq1:
+  col1, col2, col3 = st.columns([1,1,1])
+  col1.metric(label="### Productividad Diaria", value="100%", delta=80)
+  col2.metric(label="### Productividad Semanal", value="100%", delta=80)
+  col3.metric(label="### Productividad Mensual", value="100%", delta=80)
       
 time.sleep(1)   
     
