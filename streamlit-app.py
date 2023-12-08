@@ -11,8 +11,8 @@ st.set_page_config(layout="wide")
 placeholder = st.empty()
 
 # Header  
-st.header(r"$\small \color{black} \textbf{Productivity Dashboard}$")
-st.write('')
+#st.header(r"$\small \color{black} \textbf{Productivity Dashboard}$")
+#st.write('')
 
 # Footer
 footer="""<style>
