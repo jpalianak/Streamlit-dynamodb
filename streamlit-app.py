@@ -108,7 +108,7 @@ text-align: center;
 }
 </style>
 <div class="footer">
-<p>Developed by AIRBIZ <a style='display: block; text-align: center;' href="https://www.airbiz.com/" target="_blank">Heflin Stephen Raj S</a></p>
+<p>Developed by AIRBIZ <a style='display: block; text-align: center;' href="https://www.airbiz.com/"</a></p>
 </div>
 """
 st.markdown(footer,unsafe_allow_html=True)
