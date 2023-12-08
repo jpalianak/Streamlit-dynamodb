@@ -198,13 +198,13 @@ with Maq1:
   with row0_col2:
     row2_spacer1,  row2_col1, row2_spacer1 = st.columns((3, 3, 0.1))
     with row2_col1:
-      for _ in range(5):
+      for _ in range(4):
         st.markdown("<br>", unsafe_allow_html=True)
       row2_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
-      for _ in range(5):
+      for _ in range(4:
         st.markdown("<br>", unsafe_allow_html=True)
       row2_col1.metric(label="### Productividad Semanal", value="100%", delta=80)
-      for _ in range(5):
+      for _ in range(4):
         st.markdown("<br>", unsafe_allow_html=True)
       row2_col1.metric(label="### Productividad Mensual", value="100%", delta=80)
 
