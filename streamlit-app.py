@@ -6,6 +6,7 @@ import plotly.express as px
 import datetime
 
 st.set_page_config(layout="wide")
+st.write("Contenido", margin=0)
 
 # Creamos un placeholder inicial vacío
 placeholder = st.empty()
