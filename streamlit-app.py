@@ -77,14 +77,18 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
 
 # Obtenemos los datos
 df_orig = get_data()
-df_last['Ratio'] = df_last['Ratio'] *100
-  
+df_orig['Ratio'] = df_orig['Ratio'] *100
+
 Maq1, Maq2, Maq3 = st.tabs(["Maquina 1", "Maquina 2", "Maquina 3"])
 
 with Maq1:
   st.write('')
   row0_spacer1, col1, row0_spacer2, col2, row0_spacer3, col3 = st.columns((.7, 3, .1, 3, .1, 3))
   with col1:
+    d_ini = date.today()
+    d_fin = date.today()
+    maq = maq1
+    df_dia = compute_movement(df_orig,maq,d_ini,d_fin)
     st.metric(label="### Productividad Diaria", value="100%", delta=80)
     fig1 = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True,title='Evolucion de la Productividad')
     fig1.update_layout(width=1200)
