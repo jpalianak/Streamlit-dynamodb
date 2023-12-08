@@ -98,7 +98,10 @@ with Maq1:
   inicio_mes = hoy.replace(day=1)
 
   # Obtener el último día del mes actual
-  siguiente_mes = inicio_mes.replace(month=inicio_mes.month + 1, day=1)
+  if hoy.month == 12:  # Si el mes actual es diciembre
+      siguiente_mes = inicio_mes.replace(year=inicio_mes.year + 1, month=1)
+  else:
+      siguiente_mes = inicio_mes.replace(month=inicio_mes.month + 1)
   fin_mes = siguiente_mes - datetime.timedelta(days=1)
 
   # Maquina
