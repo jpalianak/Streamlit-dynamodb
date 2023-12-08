@@ -114,7 +114,7 @@ st.markdown(footer,unsafe_allow_html=True)
 
 
 
-Maq1, Maq2, Maq3, Maq4, Maq5 = st.tabs(["Maquina 1", "Maquina 2", "Maquina 3", "Maquina 4", "Maquina 5"])
+Main, Maq1, Maq2, Maq3, Maq4, Maq5 = st.tabs(["Main", "Maquina 1", "Maquina 2", "Maquina 3", "Maquina 4", "Maquina 5"])
 
 with Maq1:
   # Obtener la fecha actual
