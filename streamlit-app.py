@@ -199,15 +199,15 @@ with Maq1:
   with row0_col2:
     row2_spacer1,  row2_col1, row2_spacer1 = st.columns((3, 3, 0.1))
     with row2_col1:
-      fig = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 80,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 85},title = {'text': "Daily"}))
+      fig1 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 80,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 85},title = {'text': "Daily"}))
       fig.update_layout(height=250)
-      st.write(fig)
-      fig = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 80,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 70},title = {'text': "Weekly"}))
+      #st.write(fig)
+      fig2 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 80,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 70},title = {'text': "Weekly"}))
       fig.update_layout(height=250)
-      st.write(fig)
-      fig = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 80,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 90},title = {'text': "Monthly"}))
+      #st.write(fig)
+      fig3 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 80,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 90},title = {'text': "Monthly"}))
       fig.update_layout(height=250)
-      st.write(fig)
+      st.write(fig1,fig2,fig3)
 
 time.sleep(1)   
     
