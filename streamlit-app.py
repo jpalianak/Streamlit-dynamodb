@@ -200,13 +200,13 @@ with Maq1:
     row2_spacer1,  row2_col1, row2_spacer1 = st.columns((3, 3, 0.1))
     with row2_col1:
       fig = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 80,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 85},title = {'text': "Daily Productivity"}))
-      fig.update_layout(height=200)
+      fig.update_layout(height=300)
       st.write(fig)
       fig = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 80,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 70},title = {'text': "Weekly Productivity"}))
-      fig.update_layout(height=200)
+      fig.update_layout(height=300)
       st.write(fig)
       fig = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 80,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 90},title = {'text': "Monthly Productivity"}))
-      fig.update_layout(height=200)
+      fig.update_layout(height=300)
       st.write(fig)
 
 time.sleep(1)   
