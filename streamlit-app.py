@@ -85,8 +85,8 @@ with Maq1:
   st.write('')
   row0_spacer1, col1, row0_spacer2, col2, row0_spacer3, col3 = st.columns((.7, 3, .1, 3, .1, 3))
   with col1:
-    d_ini = datetime.today()
-    d_fin = datetime.today()
+    d_ini = datetime.datetime.today()
+    d_fin = datetime.datetime.today()
     maq = maq1
     df_dia = compute_movement(df_orig,maq,d_ini,d_fin)
     st.metric(label="### Productividad Diaria", value="100%", delta=80)
