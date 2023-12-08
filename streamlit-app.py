@@ -91,11 +91,19 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
   df_new['Ratio'] = df_new['Ratio']*100
   return df_new
 
-def line_graphic(df_orig,maq,d_ini,d_fin): 
+def line_graphic_maq(df_orig,maq,d_ini,d_fin): 
   df_last = compute_movement(df_orig,maq,d_ini,d_fin)
   fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
   fig.update_layout(width=550)
   fig.update_layout(height=400)
+  fig.update_yaxes(range=[0, 100]) 
+  return fig
+
+def line_graphic_main(df_orig,maq,d_ini,d_fin): 
+  df_last = compute_movement(df_orig,maq,d_ini,d_fin)
+  fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
+  fig.update_layout(width=550)
+  fig.update_layout(height=300)
   fig.update_yaxes(range=[0, 100]) 
   return fig
   
@@ -138,17 +146,17 @@ with Main:
   with row1_col1:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
-    fig = line_graphic(df_orig,"maq1",d_ini,d_fin)
+    fig = line_graphic_main(df_orig,"maq1",d_ini,d_fin)
     st.write(fig)
   with row1_col2:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
-    fig = line_graphic(df_orig,"maq2",d_ini,d_fin) 
+    fig = line_graphic_main(df_orig,"maq2",d_ini,d_fin) 
     st.write(fig)
   with row1_col3:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
-    fig = line_graphic(df_orig,"maq3",d_ini,d_fin)
+    fig = line_graphic_main(df_orig,"maq3",d_ini,d_fin)
     st.write(fig)
 
   row2_spacer1, row2_col1, row2_spacer2, row2_col2, row2_spacer3, row2_col3 = st.columns((1.8, 3, 1.5, 3, 1.5, 3))
@@ -160,17 +168,17 @@ with Main:
   with row3_col1:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
-    fig = line_graphic(df_orig,"maq4",d_ini,d_fin)
+    fig = line_graphic_main(df_orig,"maq4",d_ini,d_fin)
     st.write(fig)
   with row3_col2:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
-    fig = line_graphic(df_orig,"maq5",d_ini,d_fin) 
+    fig = line_graphic_main(df_orig,"maq5",d_ini,d_fin) 
     st.write(fig)
   with row3_col3:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
-    fig = line_graphic(df_orig,"maq6",d_ini,d_fin)
+    fig = line_graphic_main(df_orig,"maq6",d_ini,d_fin)
     st.write(fig)
     
 with Maq1:
@@ -187,17 +195,17 @@ with Maq1:
   with row1_col1:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
-    fig = line_graphic(df_orig,Maquina,d_ini,d_fin)
+    fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
     st.write(fig)
   with row1_col2:
     d_ini = pd.to_datetime(inicio_semana_laboral).date()
     d_fin = pd.to_datetime(fin_semana_laboral).date()
-    fig = line_graphic(df_orig,Maquina,d_ini,d_fin) 
+    fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin) 
     st.write(fig)
   with row1_col3:
     d_ini = pd.to_datetime(inicio_mes).date()
     d_fin = pd.to_datetime(fin_mes).date()
-    fig = line_graphic(df_orig,Maquina,d_ini,d_fin)
+    fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
     st.write(fig)
     
 time.sleep(1)   
