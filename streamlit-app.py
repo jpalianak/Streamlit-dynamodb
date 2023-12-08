@@ -135,8 +135,6 @@ fin_mes = siguiente_mes - datetime.timedelta(days=1)
 Main, Maq1, Maq2, Maq3, Maq4, Maq5, Maq6 = st.tabs(["Main", "Maquina 1", "Maquina 2", "Maquina 3", "Maquina 4", "Maquina 5", "Maquina 6"])
 
 with Main:
-  st.write('')
-  
   row0_spacer1, row0_col1, row0_spacer2, row0_col2, row0_spacer3, row0_col3 = st.columns((1.8, 3, 1.5, 3, 1.5, 3))
   row0_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
   row0_col2.metric(label="### Productividad Diaria", value="100%", delta=80)
