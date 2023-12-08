@@ -82,8 +82,17 @@ df_orig = get_data()
 Maq1, Maq2, Maq3 = st.tabs(["Maquina 1", "Maquina 2", "Maquina 3"])
 
 with Maq1:
+  # Obtener la fecha actual
+  hoy = datetime.date.today()
+
+  # Calcular el día de la semana actual (0 es lunes, 6 es domingo)
+  dia_semana_actual = hoy.weekday()
+
+  # Maquina
   maq = "maq1"
+  
   st.write('')
+  
   row0_spacer1, row0_col1, row0_spacer2, row0_col2, row0_spacer3, row0_col3 = st.columns((1.8, 3, 1.5, 3, 1.5, 3))
   row0_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
   row0_col2.metric(label="### Productividad Semanal", value="100%", delta=80)
@@ -91,8 +100,8 @@ with Maq1:
 
   row1_col1, row1_col2, row1_col3 = st.columns(3)
   with row1_col1:
-    d_ini = pd.to_datetime(datetime.datetime.today()).date()
-    d_fin = pd.to_datetime(datetime.datetime.today()).date()
+    d_ini = pd.to_datetime(hoy).date()
+    d_fin = pd.to_datetime(hoy).date()
     df_last = compute_movement(df_orig,maq,d_ini,d_fin)
     fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
     fig.update_layout(width=550)
