@@ -203,7 +203,7 @@ with Maq1:
         st.markdown("<br>", unsafe_allow_html=True)
       go.Indicator(mode="gauge+number", value=["team", 50], title="1")
       #row2_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
-      for _ in range(4:
+      for _ in range(4):
         st.markdown("<br>", unsafe_allow_html=True)
       row2_col1.metric(label="### Productividad Semanal", value="100%", delta=80)
       for _ in range(4):
