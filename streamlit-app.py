@@ -198,13 +198,13 @@ with Maq1:
       st.write(fig)
   with row0_col2:
     fig1 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 80,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 85},title = {'text': "Daily"}))
-    fig1.update_layout(width=500,height=250)
+    fig1.update_layout(width=500,height=250,margin=dict(l=0, r=0, b=0, t=0))
     #st.write(fig)
     fig2 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 80,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 70},title = {'text': "Weekly"}))
-    fig2.update_layout(width=500,height=250)
+    fig2.update_layout(width=500,height=250,margin=dict(l=0, r=0, b=0, t=0))
     #st.write(fig)
     fig3 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 80,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 90},title = {'text': "Monthly"}))
-    fig3.update_layout(width=500,height=250)
+    fig3.update_layout(width=500,height=250,margin=dict(l=0, r=0, b=0, t=0))
     st.write(fig1,fig2,fig3)
 
 time.sleep(1)   
