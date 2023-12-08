@@ -94,7 +94,7 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
 def line_graphic_maq(df_orig,maq,d_ini,d_fin): 
   df_last = compute_movement(df_orig,maq,d_ini,d_fin)
   fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
-  fig.update_layout(xaxis_title="Date", yaxis_title="Productivity [%]",width=550,height=400)
+  fig.update_layout(xaxis_title="Date", yaxis_title="Productivity [%]",width=550,height=350)
   fig.update_yaxes(range=[0, 100]) 
   return fig
 
@@ -174,33 +174,30 @@ with Main:
     st.write(fig)
     
 with Maq1:
-  st.write('')
-  st.write('')
-  st.write('')
-  
   Maquina = "maq1" 
 
-  row0_spacer1, row0_col1, row0_spacer2, row0_col2, row0_spacer3, row0_col3 = st.columns((1.8, 3, 1.5, 3, 1.5, 3))
-  row0_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
-  row0_col2.metric(label="### Productividad Semanal", value="100%", delta=80)
-  row0_col3.metric(label="### Productividad Mensual", value="100%", delta=80)
-
-  row1_col1, row1_col2, row1_col3 = st.columns(3)
-  with row1_col1:
+  row0_spacer1, row0_col1, row0_spacer2, row0_col2, row0_spacer3 = st.columns((0.1, 6, 1, 2, 0.1))
+  with row0_col1:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
     fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
     st.write(fig)
-  with row1_col2:
-    d_ini = pd.to_datetime(inicio_semana_laboral).date()
-    d_fin = pd.to_datetime(fin_semana_laboral).date()
-    fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin) 
-    st.write(fig)
-  with row1_col3:
-    d_ini = pd.to_datetime(inicio_mes).date()
-    d_fin = pd.to_datetime(fin_mes).date()
-    fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
-    st.write(fig)
-    
+    row1_spacer1, row1_col1, row1_col2 = st.columns((0.1, 3, 3))
+    with row1_col1:
+      d_ini = pd.to_datetime(inicio_semana_laboral).date()
+      d_fin = pd.to_datetime(fin_semana_laboral).date()
+      fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin) 
+      st.write(fig)
+    with row1_col2:
+      d_ini = pd.to_datetime(inicio_mes).date()
+      d_fin = pd.to_datetime(fin_mes).date()
+      fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
+      st.write(fig)
+  with row0_col2:
+    row0_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
+    row0_col2.metric(label="### Productividad Semanal", value="100%", delta=80)
+    row0_col3.metric(label="### Productividad Mensual", value="100%", delta=80)
+
+ #row1_col1, row1_col2, row1_col3 = st.columns(3)
 time.sleep(1)   
     
