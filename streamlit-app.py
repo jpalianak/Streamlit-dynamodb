@@ -83,6 +83,38 @@ df_orig = get_data()
 st.header(r"$\small \color{black} \textbf{Productivity Dashboard} \tiny \color{#228B22} \textit{ by AIRBIZ}$")
 st.write('')
 
+# Footer
+footer="""<style>
+a:link , a:visited{
+color: blue;
+background-color: transparent;
+text-decoration: underline;
+}
+
+a:hover,  a:active {
+color: red;
+background-color: transparent;
+text-decoration: underline;
+}
+
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: white;
+color: black;
+text-align: center;
+}
+</style>
+<div class="footer">
+<p>Developed with ❤ by <a style='display: block; text-align: center;' href="https://www.heflin.dev/" target="_blank">Heflin Stephen Raj S</a></p>
+</div>
+"""
+st.markdown(footer,unsafe_allow_html=True)
+
+
+
 Maq1, Maq2, Maq3, Maq4, Maq5 = st.tabs(["Maquina 1", "Maquina 2", "Maquina 3", "Maquina 4", "Maquina 5"])
 
 with Maq1:
