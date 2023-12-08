@@ -89,7 +89,7 @@ with Maq1:
   row0_col2.metric(label="### Productividad Semanal", value="100%", delta=80)
   row0_col3.metric(label="### Productividad Mensual", value="100%", delta=80)
 
-  row1_spacer1, row1_col1, row1_spacer2, row1_col2, row1_spacer3, row1_col3 = st.columns((.7, 3, .1, 3, .1, 3))
+  row1_spacer1, row1_col1, row1_spacer2, row1_col2, row1_spacer3, row1_col3 = st.columns((.1, 3, .1, 3, .1, 3))
   with row1_col1:
     d_ini = datetime.datetime.today()
     d_fin = datetime.datetime.today()
