@@ -126,8 +126,6 @@ fin_mes = siguiente_mes - datetime.timedelta(days=1)
 
 Main, Maq1, Maq2, Maq3, Maq4, Maq5 = st.tabs(["Main", "Maquina 1", "Maquina 2", "Maquina 3", "Maquina 4", "Maquina 5"])
 
-with Main:
-  
 with Maq1:
   maq = "maq1"
   
