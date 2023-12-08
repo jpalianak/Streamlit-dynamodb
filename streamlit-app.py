@@ -152,7 +152,6 @@ with Main:
     fig = line_graphic_main(df_orig,"maq3",d_ini,d_fin)
     fig.update_layout(yaxis_title="Daily productivity [%] - Maquina 3")
     st.write(fig)
-
   row3_col1, row3_col2, row3_col3 = st.columns(3)
   with row3_col1:
     d_ini = pd.to_datetime(hoy).date()
@@ -176,26 +175,27 @@ with Main:
 with Maq1:
   Maquina = "maq1" 
 
-  row0_col1, row0_spacer2, row0_col2 = st.columns((6, 0.1, 2))
-  with row0_col1:
-    d_ini = pd.to_datetime(hoy).date()
-    d_fin = pd.to_datetime(hoy).date()
-    fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
-    fig.update_layout(xaxis_title="Date", yaxis_title="Daily Productivity [%]",width=1400,height=350)
-    st.write(fig)
-    row1_col1, row1_col2 = st.columns((3, 3))
-    with row1_col1:
-      d_ini = pd.to_datetime(inicio_semana_laboral).date()
-      d_fin = pd.to_datetime(fin_semana_laboral).date()
+  with st.container(border=True)
+    row0_col1, row0_spacer2, row0_col2 = st.columns((6, 0.1, 2))
+    with row0_col1:
+      d_ini = pd.to_datetime(hoy).date()
+      d_fin = pd.to_datetime(hoy).date()
       fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
-      fig.update_layout(yaxis_title="Weekly productivity [%]")
+      fig.update_layout(xaxis_title="Date", yaxis_title="Daily Productivity [%]",width=1400,height=350)
       st.write(fig)
-    with row1_col2:
-      d_ini = pd.to_datetime(inicio_mes).date()
-      d_fin = pd.to_datetime(fin_mes).date()
-      fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
-      fig.update_layout(yaxis_title="Monthly productivity [%]")
-      st.write(fig)
+      row1_col1, row1_col2 = st.columns((3, 3))
+      with row1_col1:
+        d_ini = pd.to_datetime(inicio_semana_laboral).date()
+        d_fin = pd.to_datetime(fin_semana_laboral).date()
+        fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
+        fig.update_layout(yaxis_title="Weekly productivity [%]")
+        st.write(fig)
+      with row1_col2:
+        d_ini = pd.to_datetime(inicio_mes).date()
+        d_fin = pd.to_datetime(fin_mes).date()
+        fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
+        fig.update_layout(yaxis_title="Monthly productivity [%]")
+        st.write(fig)
   with row0_col2:
     row2_spacer1,  row2_col1, row2_spacer1 = st.columns((1.5, 3, 0.1))
     st.write('')
