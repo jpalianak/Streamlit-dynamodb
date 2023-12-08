@@ -181,7 +181,9 @@ with Maq1:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
     fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
+    fig.update_layout(xaxis_title="Date", yaxis_title="Productivity [%]",width=1100,height=350)
     st.write(fig)
+    
     row1_spacer1, row1_col1, row1_col2 = st.columns((0.1, 3, 3))
     with row1_col1:
       d_ini = pd.to_datetime(inicio_semana_laboral).date()
