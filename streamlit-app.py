@@ -80,7 +80,7 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
 df_orig = get_data()
 
 # Titulo del Sidebar  
-st.header(r"$\small \color{black} \textbf{Productivity Dashboard} \tiny \color{#228B22} \textit{ by AIRBIZ}$")
+st.header(r"$\small \color{black} \textbf{Productivity Dashboard}$")
 st.write('')
 
 # Footer
@@ -108,7 +108,7 @@ text-align: center;
 }
 </style>
 <div class="footer">
-<p>Developed with ❤ by <a style='display: block; text-align: center;' href="https://www.heflin.dev/" target="_blank">Heflin Stephen Raj S</a></p>
+<p>Developed by AIRBIZ <a style='display: block; text-align: center;' href="https://www.airbiz.com/" target="_blank">Heflin Stephen Raj S</a></p>
 </div>
 """
 st.markdown(footer,unsafe_allow_html=True)
