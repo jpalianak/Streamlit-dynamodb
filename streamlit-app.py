@@ -86,8 +86,8 @@ with Maq1:
   st.write('')
   row0_spacer1, row0_col1, row0_spacer2, row0_col2, row0_spacer3, row0_col3 = st.columns((.7, 3, .1, 3, .1, 3))
   row0_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
-  row0_col1.metric(label="### Productividad Semanal", value="100%", delta=80)
-  row0_col1.metric(label="### Productividad Mensual", value="100%", delta=80)
+  row0_col2.metric(label="### Productividad Semanal", value="100%", delta=80)
+  row0_col3.metric(label="### Productividad Mensual", value="100%", delta=80)
 
   row1_spacer1, col1, row1_spacer2, col2, row1_spacer3, col3 = st.columns((.7, 3, .1, 3, .1, 3))
   with row1_col1:
