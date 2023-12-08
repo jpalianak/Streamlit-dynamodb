@@ -195,10 +195,9 @@ with Maq1:
       d_fin = pd.to_datetime(fin_mes).date()
       fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
       st.write(fig)
-  with row0_col2:
-    row0_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
-    row0_col2.metric(label="### Productividad Semanal", value="100%", delta=80)
-    row0_col3.metric(label="### Productividad Mensual", value="100%", delta=80)
+  row0_col2.metric(label="### Productividad Diaria", value="100%", delta=80)
+  row0_col2.metric(label="### Productividad Semanal", value="100%", delta=80)
+  row0_col2.metric(label="### Productividad Mensual", value="100%", delta=80)
 
 time.sleep(1)   
     
