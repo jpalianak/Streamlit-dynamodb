@@ -91,8 +91,8 @@ with Maq1:
     df_last = compute_movement(df_orig,maq,d_ini,d_fin)
     st.metric(label="### Productividad Diaria", value="100%", delta=80)
     fig1 = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
-    fig1.update_layout(width=400)
-    fig1.update_layout(height=200)
+    fig1.update_layout(width=500)
+    fig1.update_layout(height=400)
     fig1.update_yaxes(range=[0, 100]) 
     st.write(fig1)  
   with col2:
