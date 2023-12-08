@@ -197,12 +197,13 @@ with Maq1:
       st.write(fig)
   with row0_col2:
     row2_spacer1,  row2_col1, row2_spacer1 = st.columns((3, 3, 0.1))
-    spacer.text(" " * 5)
-    row2_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
-    spacer.text(" " * 5)
-    row2_col1.metric(label="### Productividad Semanal", value="100%", delta=80)
-    spacer.text(" " * 5)
-    row2_col1.metric(label="### Productividad Mensual", value="100%", delta=80)
+    with row2_col1:
+      spacer.text(" " * 5)
+      row2_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
+      spacer.text(" " * 5)
+      row2_col1.metric(label="### Productividad Semanal", value="100%", delta=80)
+      spacer.text(" " * 5)
+      row2_col1.metric(label="### Productividad Mensual", value="100%", delta=80)
 
 time.sleep(1)   
     
