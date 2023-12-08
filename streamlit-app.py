@@ -84,11 +84,7 @@ st.write('')
 
 # Footer
 footer="""<style>
-a:link , a:visited{
-color: blue;
-background-color: transparent;
-text-decoration: underline;
-}
+a:link , a:visited{color: blue;background-color: transparent;text-decoration: underline;}
 
 a:hover,  a:active {
 color: red;
@@ -111,8 +107,6 @@ text-align: center;
 </div>
 """
 st.markdown(footer,unsafe_allow_html=True)
-
-
 
 Main, Maq1, Maq2, Maq3, Maq4, Maq5 = st.tabs(["Main", "Maquina 1", "Maquina 2", "Maquina 3", "Maquina 4", "Maquina 5"])
 
