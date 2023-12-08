@@ -77,7 +77,7 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
 
 # Obtenemos los datos
 df_orig = get_data()
-df_orig['Ratio'] = df_orig['Ratio'] *100
+df_orig['Ratio'] = df_orig['Ratio']*100
 
 Maq1, Maq2, Maq3 = st.tabs(["Maquina 1", "Maquina 2", "Maquina 3"])
 
