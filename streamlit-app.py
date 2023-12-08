@@ -36,7 +36,7 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
   df_orig['Ycenter'] = df_orig['Ymax'] - df_orig['Ymin']
    
   # Filtro del dataframe segun los parametros seleccionados
-  df_filter = df_orig[(pd.to_datetime(df_orig['Date']).dt.date >= pd.to_datetime(d_ini).date()) & (pd.to_datetime(df_orig['Date']).dt.date <= pd.to_datetime(d_fin).date())]
+  df_filter = df_orig[(pd.to_datetime(df_orig['Date']).dt.date >= d_ini) & (pd.to_datetime(df_orig['Date']).dt.date <= d_fin)]
 
   # Crear un nuevo dataframe
   df_new = pd.DataFrame()
@@ -100,8 +100,10 @@ with Maq1:
     fig.update_yaxes(range=[0, 100]) 
     st.write(fig)
   with row1_col2:
-    d_ini = datetime.datetime.today()
-    d_fin = datetime.datetime.today()
+    #d_ini = pd.to_datetime(datetime.datetime.today()).date()
+    d_ini = datetime.date.today()
+    #d_fin = datetime.datetime.today()
+    d_fin = datetime.date.today()
     df_last = compute_movement(df_orig,maq,d_ini,d_fin)
     fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
     fig.update_layout(width=550)
