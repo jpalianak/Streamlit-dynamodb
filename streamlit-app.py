@@ -79,6 +79,10 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
 # Obtenemos los datos
 df_orig = get_data()
 
+# Titulo del Sidebar  
+st.header(r"$\small \color{white} \textbf{Productivity Dashboard} \tiny \color{#228B22} \textit{ by AIRBIZ}$", divider='gray')
+st.write('')
+
 Maq1, Maq2, Maq3, Maq4, Maq5 = st.tabs(["Maquina 1", "Maquina 2", "Maquina 3", "Maquina 4", "Maquina 5"])
 
 with Maq1:
