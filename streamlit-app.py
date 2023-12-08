@@ -80,7 +80,7 @@ df_orig = get_data()
   
 Maq1, Maq1, Maq1 = st.tabs(["Maquina 1", "Maquina 2", "Maquina 3"])
 
-with tab1:
+with Maq1:
    st.header("Maquina 1")
       
 time.sleep(1)   
