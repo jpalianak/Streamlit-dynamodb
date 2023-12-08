@@ -100,7 +100,7 @@ with Maq1:
     fig.update_yaxes(range=[0, 100]) 
     st.write(fig)
   with row1_col2:
-    d_ini = pd.to_datetime(datetime.datetime.today()).date()
+    d_ini = pd.to_datetime(datetime.datetime.today()).date() - 7
     d_fin = pd.to_datetime(datetime.datetime.today()).date()
     df_last = compute_movement(df_orig,maq,d_ini,d_fin)
     fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
@@ -109,7 +109,7 @@ with Maq1:
     fig.update_yaxes(range=[0, 100]) 
     st.write(fig)
   with row1_col3:
-    d_ini = pd.to_datetime(datetime.datetime.today()).date()
+    d_ini = pd.to_datetime(datetime.datetime.today()).date() - 30
     d_fin = pd.to_datetime(datetime.datetime.today()).date()
     df_last = compute_movement(df_orig,maq,d_ini,d_fin)
     fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
