@@ -73,11 +73,11 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
 
   # Porcentaje de productividad
   df_new['Ratio'] = df_new['Cumulative_sum_si'] / df_new['Cumulative_total']
+  df_new['Ratio'] = df_new['Ratio']*100
   return df_new
 
 # Obtenemos los datos
 df_orig = get_data()
-df_orig['Ratio'] = df_orig['Ratio']*100
 
 Maq1, Maq2, Maq3 = st.tabs(["Maquina 1", "Maquina 2", "Maquina 3"])
 
