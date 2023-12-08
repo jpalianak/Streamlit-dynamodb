@@ -203,9 +203,11 @@ with Maq1:
       fig.update_layout(height=300)
       st.write(fig)
       fig = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 80,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 70},title = {'text': "Weekly Productivity"}))
-      row2_col1.plotly_chart(fig, use_container_width=True)
+      fig.update_layout(height=300)
+      st.write(fig)
       fig = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 80,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 90},title = {'text': "Monthly Productivity"}))
-      row2_col1.plotly_chart(fig, use_container_width=True)
+      fig.update_layout(height=300)
+      st.write(fig)
 
 time.sleep(1)   
     
