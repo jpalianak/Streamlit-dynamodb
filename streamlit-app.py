@@ -175,7 +175,7 @@ with Main:
 with Maq1:
   Maquina = "maq1" 
 
-  with st.container(border=True)
+ container = st.container(border=True)
     row0_col1, row0_spacer2, row0_col2 = st.columns((6, 0.1, 2))
     with row0_col1:
       d_ini = pd.to_datetime(hoy).date()
