@@ -81,7 +81,7 @@ df_orig = get_data()
 Maq1, Maq2, Maq3 = st.tabs(["Maquina 1", "Maquina 2", "Maquina 3"])
 
 with Maq1:
-  col1, col2, col3 = st.columns([1,1,1])
+  row0_spacer1, col1, row0_spacer2, col2, row0_spacer3, col3 = st.columns((.5, 3, .1, 3, .1, 3))
   col1.metric(label="### Productividad Diaria", value="100%", delta=80)
   col2.metric(label="### Productividad Semanal", value="100%", delta=80)
   col3.metric(label="### Productividad Mensual", value="100%", delta=80)
