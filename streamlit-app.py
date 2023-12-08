@@ -188,15 +188,20 @@ with Maq1:
     with row1_col1:
       d_ini = pd.to_datetime(inicio_semana_laboral).date()
       d_fin = pd.to_datetime(fin_semana_laboral).date()
-      fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin) 
+      fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
+      fig.update_layout(yaxis_title="Weekly productivity [%]")
       st.write(fig)
     with row1_col2:
       d_ini = pd.to_datetime(inicio_mes).date()
       d_fin = pd.to_datetime(fin_mes).date()
       fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
+      fig.update_layout(yaxis_title="Monthly productivity [%]")
       st.write(fig)
   with row0_col2:
     row1_spacer1,  row1_col1, row1_spacer1 = st.columns((1.5, 3, 0.1))
+    st.write('')
+    st.write('')
+    st.write('')
     st.write('')
     st.write('')
     row1_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
