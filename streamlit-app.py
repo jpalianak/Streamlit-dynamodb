@@ -202,7 +202,7 @@ with Maq1:
       for _ in range(4):
         st.markdown("<br>", unsafe_allow_html=True)
       fig = go.Figure(go.Indicator(mode = "gauge+number",value = 270,domain = {'x': [0, 1], 'y': [0, 1]},title = {'text': "Speed"}))
-      fig.show()
+      st.plotly_chart(fig, use_container_width=True)
       #row2_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
       for _ in range(4):
         st.markdown("<br>", unsafe_allow_html=True)
