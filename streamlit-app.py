@@ -204,13 +204,13 @@ with Maq1:
     st.write('')
     st.write('')
     st.write('')
-    row1_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
+    st.metric(label="### Productividad Diaria", value="100%", delta=80)
     st.write('')
     st.write('')
-    row1_col1.metric(label="### Productividad Semanal", value="100%", delta=80)
+    st.metric(label="### Productividad Semanal", value="100%", delta=80)
     st.write('')
     st.write('')
-    row1_col1.metric(label="### Productividad Mensual", value="100%", delta=80)
+    st.metric(label="### Productividad Mensual", value="100%", delta=80)
 
 time.sleep(1)   
     
