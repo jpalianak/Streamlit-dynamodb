@@ -200,11 +200,11 @@ with Maq1:
     row2_spacer1,  row2_col1, row2_spacer1 = st.columns((3, 3, 0.1))
     with row2_col1:
       fig = go.Figure(go.Indicator(mode = "gauge+number",value = 270,domain = {'x': [0, 1], 'y': [0, 1]},title = {'text': "Speed"}))
-      st.plotly_chart(fig, use_container_width=True)
+      st.plotly_chart(fig, use_container_width=False)
       fig = go.Figure(go.Indicator(mode = "gauge+number",value = 270,domain = {'x': [0, 1], 'y': [0, 1]},title = {'text': "Speed"}))
-      st.plotly_chart(fig, use_container_width=True)
+      st.plotly_chart(fig, use_container_width=False)
       fig = go.Figure(go.Indicator(mode = "gauge+number",value = 270,domain = {'x': [0, 1], 'y': [0, 1]},title = {'text': "Speed"}))
-      st.plotly_chart(fig, use_container_width=True)
+      st.plotly_chart(fig, use_container_width=False)
 
 time.sleep(1)   
     
