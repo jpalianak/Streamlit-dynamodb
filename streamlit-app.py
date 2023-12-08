@@ -79,7 +79,7 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
 # Obtenemos los datos
 df_orig = get_data()
 
-Maq1, Maq2, Maq3 = st.tabs(["Maquina 1", "Maquina 2", "Maquina 3"])
+Maq1, Maq2, Maq3, Maq4, Maq5 = st.tabs(["Maquina 1", "Maquina 2", "Maquina 3", "Maquina 4", "Maquina 5"])
 
 with Maq1:
   # Obtener la fecha actual
@@ -87,6 +87,12 @@ with Maq1:
 
   # Calcular el día de la semana actual (0 es lunes, 6 es domingo)
   dia_semana_actual = hoy.weekday()
+
+  # Calcular el desplazamiento necesario para llegar al lunes (inicio de semana laboral)
+  inicio_semana_laboral = hoy - datetime.timedelta(days=dia_semana_actual)
+
+  # Calcular el desplazamiento necesario para llegar al viernes (final de semana laboral)
+  fin_semana_laboral = hoy + datetime.timedelta(days=(4 - dia_semana_actual))
 
   # Maquina
   maq = "maq1"
@@ -109,8 +115,8 @@ with Maq1:
     fig.update_yaxes(range=[0, 100]) 
     st.write(fig)
   with row1_col2:
-    d_ini = pd.to_datetime(datetime.datetime.today()).date() - datetime.timedelta(days=7)
-    d_fin = pd.to_datetime(datetime.datetime.today()).date()
+    d_ini = pd.to_datetime(inicio_semana_laboral).date()
+    d_fin = pd.to_datetime(fin_semana_laboral).date()
     df_last = compute_movement(df_orig,maq,d_ini,d_fin)
     fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
     fig.update_layout(width=550)
