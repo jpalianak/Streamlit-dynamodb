@@ -138,16 +138,19 @@ with Main:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
     fig = line_graphic_main(df_orig,"maq1",d_ini,d_fin)
+    fig.update_layout(yaxis_title="Daily productivity [%] - Maquina 1")
     st.write(fig)
   with row1_col2:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
     fig = line_graphic_main(df_orig,"maq2",d_ini,d_fin) 
+    fig.update_layout(yaxis_title="Daily productivity [%] - Maquina 2")
     st.write(fig)
   with row1_col3:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
     fig = line_graphic_main(df_orig,"maq3",d_ini,d_fin)
+    fig.update_layout(yaxis_title="Daily productivity [%] - Maquina 3")
     st.write(fig)
 
   row3_col1, row3_col2, row3_col3 = st.columns(3)
@@ -155,16 +158,19 @@ with Main:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
     fig = line_graphic_main(df_orig,"maq4",d_ini,d_fin)
+    fig.update_layout(yaxis_title="Daily productivity [%] - Maquina 4")
     st.write(fig)
   with row3_col2:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
     fig = line_graphic_main(df_orig,"maq5",d_ini,d_fin) 
+    fig.update_layout(yaxis_title="Daily productivity [%] - Maquina 5")
     st.write(fig)
   with row3_col3:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
     fig = line_graphic_main(df_orig,"maq6",d_ini,d_fin)
+    fig.update_layout(yaxis_title="Daily productivity [%] - Maquina 6")
     st.write(fig)
     
 with Maq1:
