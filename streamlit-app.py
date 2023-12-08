@@ -200,11 +200,11 @@ with Maq1:
     row2_spacer1,  row2_col1, row2_spacer1 = st.columns((3, 3, 0.1))
     with row2_col1:
       fig = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 80,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 85},title = {'text': "Daily Productivity"}))
-      st.plotly_chart(fig, use_container_width=False)
+      row2_col1.plotly_chart(fig, use_container_width=True)
       fig = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 80,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 70},title = {'text': "Weekly Productivity"}))
-      st.plotly_chart(fig, use_container_width=False)
+      row2_col1.plotly_chart(fig, use_container_width=True)
       fig = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 80,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 90},title = {'text': "Monthly Productivity"}))
-      st.plotly_chart(fig, use_container_width=False)
+      row2_col1.plotly_chart(fig, use_container_width=True)
 
 time.sleep(1)   
     
