@@ -124,12 +124,60 @@ else:
     siguiente_mes = inicio_mes.replace(month=inicio_mes.month + 1)
 fin_mes = siguiente_mes - datetime.timedelta(days=1)
 
-Main, Maq1, Maq2, Maq3, Maq4, Maq5 = st.tabs(["Main", "Maquina 1", "Maquina 2", "Maquina 3", "Maquina 4", "Maquina 5"])
+Main, Maq1, Maq2, Maq3, Maq4, Maq5, Maq6 = st.tabs(["Main", "Maquina 1", "Maquina 2", "Maquina 3", "Maquina 4", "Maquina 5", "Maquina 6"])
 
-with Maq1:
-  Maquina = "maq1"
-  
+with Main:
   st.write('')
+  
+  row0_spacer1, row0_col1, row0_spacer2, row0_col2, row0_spacer3, row0_col3 = st.columns((1.8, 3, 1.5, 3, 1.5, 3))
+  row0_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
+  row0_col2.metric(label="### Productividad Diaria", value="100%", delta=80)
+  row0_col3.metric(label="### Productividad Diaria", value="100%", delta=80)
+
+  row1_col1, row1_col2, row1_col3 = st.columns(3)
+  with row1_col1:
+    d_ini = pd.to_datetime(hoy).date()
+    d_fin = pd.to_datetime(hoy).date()
+    fig = line_graphic(df_orig,"maq1",d_ini,d_fin)
+    st.write(fig)
+  with row1_col2:
+    d_ini = pd.to_datetime(hoy).date()
+    d_fin = pd.to_datetime(hoy).date()
+    fig = line_graphic(df_orig,"maq2",d_ini,d_fin) 
+    st.write(fig)
+  with row1_col3:
+    d_ini = pd.to_datetime(hoy).date()
+    d_fin = pd.to_datetime(hoy).date()
+    fig = line_graphic(df_orig,"maq3",d_ini,d_fin)
+    st.write(fig)
+
+  row2_spacer1, row2_col1, row2_spacer2, row2_col2, row2_spacer3, row2_col3 = st.columns((1.8, 3, 1.5, 3, 1.5, 3))
+  row2_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
+  row2_col2.metric(label="### Productividad Diaria", value="100%", delta=80)
+  row2_col3.metric(label="### Productividad Diaria", value="100%", delta=80)
+
+  row3_col1, row3_col2, row3_col3 = st.columns(3)
+  with row3_col1:
+    d_ini = pd.to_datetime(hoy).date()
+    d_fin = pd.to_datetime(hoy).date()
+    fig = line_graphic(df_orig,"maq4",d_ini,d_fin)
+    st.write(fig)
+  with row3_col2:
+    d_ini = pd.to_datetime(hoy).date()
+    d_fin = pd.to_datetime(hoy).date()
+    fig = line_graphic(df_orig,"maq5",d_ini,d_fin) 
+    st.write(fig)
+  with row3_col3:
+    d_ini = pd.to_datetime(hoy).date()
+    d_fin = pd.to_datetime(hoy).date()
+    fig = line_graphic(df_orig,"maq6",d_ini,d_fin)
+    st.write(fig)
+    
+with Maq1:
+  st.write('')
+  
+  Maquina = "maq1" 
+
   row0_spacer1, row0_col1, row0_spacer2, row0_col2, row0_spacer3, row0_col3 = st.columns((1.8, 3, 1.5, 3, 1.5, 3))
   row0_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
   row0_col2.metric(label="### Productividad Semanal", value="100%", delta=80)
@@ -151,5 +199,6 @@ with Maq1:
     d_fin = pd.to_datetime(fin_mes).date()
     fig = line_graphic(df_orig,Maquina,d_ini,d_fin)
     st.write(fig)
+    
 time.sleep(1)   
     
