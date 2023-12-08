@@ -82,23 +82,22 @@ df_orig = get_data()
 Maq1, Maq2, Maq3 = st.tabs(["Maquina 1", "Maquina 2", "Maquina 3"])
 
 with Maq1:
+  maq = "maq1"
   st.write('')
-  row0_spacer1, col1, row0_spacer2, col2, row0_spacer3, col3 = st.columns((.7, 3, .1, 3, .1, 3))
-  with col1:
+  row0_spacer1, row0_col1, row0_spacer2, row0_col2, row0_spacer3, row0_col3 = st.columns((.7, 3, .1, 3, .1, 3))
+  row0_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
+  row0_col1.metric(label="### Productividad Semanal", value="100%", delta=80)
+  row0_col1.metric(label="### Productividad Mensual", value="100%", delta=80)
+
+  row1_spacer1, col1, row1_spacer2, col2, row1_spacer3, col3 = st.columns((.7, 3, .1, 3, .1, 3))
+  with row1_col1:
     d_ini = datetime.datetime.today()
     d_fin = datetime.datetime.today()
-    maq = "maq1"
     df_last = compute_movement(df_orig,maq,d_ini,d_fin)
-    st.metric(label="### Productividad Diaria", value="100%", delta=80)
     fig1 = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
     fig1.update_layout(width=500)
     fig1.update_layout(height=400)
     fig1.update_yaxes(range=[0, 100]) 
-    st.write(fig1)  
-  with col2:
-    st.metric(label="### Productividad Semanal", value="100%", delta=80)
-  with col3:
-    st.metric(label="### Productividad Mensual", value="100%", delta=80)
-       
+    st.write(fig1)      
 time.sleep(1)   
     
