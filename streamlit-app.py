@@ -84,7 +84,7 @@ Maq1, Maq2, Maq3 = st.tabs(["Maquina 1", "Maquina 2", "Maquina 3"])
 with Maq1:
   maq = "maq1"
   st.write('')
-  row0_spacer1, row0_col1, row0_spacer2, row0_col2, row0_spacer3, row0_col3 = st.columns((1, 3, .1, 3, .1, 3))
+  row0_spacer1, row0_col1, row0_spacer2, row0_col2, row0_spacer3, row0_col3 = st.columns((2, 3, .1, 3, .1, 3))
   row0_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
   row0_col2.metric(label="### Productividad Semanal", value="100%", delta=80)
   row0_col3.metric(label="### Productividad Mensual", value="100%", delta=80)
