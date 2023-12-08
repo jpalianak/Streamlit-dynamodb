@@ -201,6 +201,7 @@ with Maq1:
     with row2_col1:
       for _ in range(4):
         st.markdown("<br>", unsafe_allow_html=True)
+      fig = go.Figure()  
       fig.add_trace(go.Indicator(value = 200,delta = {'reference': 160},gauge = {'axis': {'visible': False}},domain = {'row': 0, 'column': 0}))
       #row2_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
       for _ in range(4):
