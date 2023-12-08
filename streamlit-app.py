@@ -198,7 +198,7 @@ with Maq1:
       fig.update_layout(yaxis_title="Monthly productivity [%]")
       st.write(fig)
   with row0_col2:
-    row1_spacer1,  row1_col1, row1_spacer1 = st.columns((1.5, 3, 0.1))
+    row2_spacer1,  row2_col1, row2_spacer1 = st.columns((1.5, 3, 0.1))
     st.write('')
     st.write('')
     st.write('')
