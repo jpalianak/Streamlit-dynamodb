@@ -91,8 +91,8 @@ with Maq1:
 
   row1_col1, row1_col2, row1_col3 = st.columns(3)
   with row1_col1:
-    d_ini = datetime.datetime.today()
-    d_fin = datetime.datetime.today()
+    d_ini = pd.to_datetime(datetime.datetime.today()).date()
+    d_fin = pd.to_datetime(datetime.datetime.today()).date()
     df_last = compute_movement(df_orig,maq,d_ini,d_fin)
     fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
     fig.update_layout(width=550)
@@ -109,8 +109,8 @@ with Maq1:
     fig.update_yaxes(range=[0, 100]) 
     st.write(fig)
   with row1_col3:
-    d_ini = datetime.datetime.today()
-    d_fin = datetime.datetime.today()
+    d_ini = pd.to_datetime(datetime.datetime.today()).date()
+    d_fin = pd.to_datetime(datetime.datetime.today()).date()
     df_last = compute_movement(df_orig,maq,d_ini,d_fin)
     fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
     fig.update_layout(width=550)
