@@ -199,17 +199,18 @@ with Maq1:
   with row0_col2:
     row2_spacer1,  row2_col1, row2_spacer1 = st.columns((3, 3, 0.1))
     with row2_col1:
-      for _ in range(4):
+      for _ in range(1):
         st.markdown("<br>", unsafe_allow_html=True)
       fig = go.Figure(go.Indicator(mode = "gauge+number",value = 270,domain = {'x': [0, 1], 'y': [0, 1]},title = {'text': "Speed"}))
       st.plotly_chart(fig, use_container_width=True)
-      #row2_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
-      for _ in range(4):
+      for _ in range(1):
         st.markdown("<br>", unsafe_allow_html=True)
-      row2_col1.metric(label="### Productividad Semanal", value="100%", delta=80)
-      for _ in range(4):
+      fig = go.Figure(go.Indicator(mode = "gauge+number",value = 270,domain = {'x': [0, 1], 'y': [0, 1]},title = {'text': "Speed"}))
+      st.plotly_chart(fig, use_container_width=True)
+      for _ in range(1):
         st.markdown("<br>", unsafe_allow_html=True)
-      row2_col1.metric(label="### Productividad Mensual", value="100%", delta=80)
+      fig = go.Figure(go.Indicator(mode = "gauge+number",value = 270,domain = {'x': [0, 1], 'y': [0, 1]},title = {'text': "Speed"}))
+      st.plotly_chart(fig, use_container_width=True)
 
 time.sleep(1)   
     
