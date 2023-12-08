@@ -8,7 +8,7 @@ import datetime
 st.set_page_config(layout="wide")
 
 # Creamos un placeholder inicial vacío
-placeholder = st.empty()
+spacer = st.empty()
 
 # Header  
 #st.header(r"$\small \color{black} \textbf{Productivity Dashboard}$")
@@ -94,7 +94,7 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
 def line_graphic_maq(df_orig,maq,d_ini,d_fin): 
   df_last = compute_movement(df_orig,maq,d_ini,d_fin)
   fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
-  fig.update_layout(xaxis_title="Date", yaxis_title="Productivity [%]",width=700,height=400)
+  fig.update_layout(xaxis_title="Date", yaxis_title="Productivity [%]",width=700,height=350)
   fig.update_yaxes(range=[0, 100]) 
   return fig
 
@@ -197,14 +197,11 @@ with Maq1:
       st.write(fig)
   with row0_col2:
     row2_spacer1,  row2_col1, row2_spacer1 = st.columns((3, 3, 0.1))
-    row2_col1.write(" ")
-    row2_col1.write(" ")
+    spacer.text(" " * 5)
     row2_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
-    row2_col1.write(" ")
-    row2_col1.write(" ")
+    spacer.text(" " * 5)
     row2_col1.metric(label="### Productividad Semanal", value="100%", delta=80)
-    row2_col1.write(" ")
-    row2_col1.write(" ")
+    spacer.text(" " * 5)
     row2_col1.metric(label="### Productividad Mensual", value="100%", delta=80)
 
 time.sleep(1)   
