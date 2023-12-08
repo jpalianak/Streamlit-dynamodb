@@ -10,6 +10,22 @@ st.set_page_config(layout="wide")
 # Creamos un placeholder inicial vacío
 placeholder = st.empty()
 
+# Header  
+st.header(r"$\small \color{black} \textbf{Productivity Dashboard}$")
+st.write('')
+
+# Footer
+footer="""<style>
+a:link , a:visited{color: blue;background-color: transparent;text-decoration: underline;}
+a:hover,  a:active {color: red;background-color: transparent;text-decoration: underline;}
+.footer {position: fixed;left: 0;bottom: 0;width: 100%;background-color: white;color: black;text-align: center;}
+</style>
+<div class="footer">
+<p>Developed by AIRBIZ <a style='display: block; text-align: center;' href="https://www.airbiz.com/" target="_blank">www.airbiz.com</a></p>
+</div>
+"""
+st.markdown(footer,unsafe_allow_html=True)
+
 def get_data():
   # Crear el cliente de DynamoDB usando boto3
   dynamodb = boto3.resource('dynamodb', region_name='us-east-1')  # Reemplaza 'tu_region' con la región de tu tabla
@@ -75,55 +91,47 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
   df_new['Ratio'] = df_new['Ratio']*100
   return df_new
 
+def line_graphic(df_orig,maquina,d_ini,d_fin): 
+  df_last = compute_movement(df_orig,maq,d_ini,d_fin)
+  fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
+  fig.update_layout(width=550)
+  fig.update_layout(height=400)
+  fig.update_yaxes(range=[0, 100]) 
+  return fig
+  
 # Obtenemos los datos
 df_orig = get_data()
 
-# Titulo del Sidebar  
-st.header(r"$\small \color{black} \textbf{Productivity Dashboard}$")
-st.write('')
+# Obtener la fecha actual
+hoy = datetime.date.today()
 
-# Footer
-footer="""<style>
-a:link , a:visited{color: blue;background-color: transparent;text-decoration: underline;}
-a:hover,  a:active {color: red;background-color: transparent;text-decoration: underline;}
-.footer {position: fixed;left: 0;bottom: 0;width: 100%;background-color: white;color: black;text-align: center;}
-</style>
-<div class="footer">
-<p>Developed by AIRBIZ <a style='display: block; text-align: center;' href="https://www.airbiz.com/" target="_blank">www.airbiz.com</a></p>
-</div>
-"""
-st.markdown(footer,unsafe_allow_html=True)
+# Calcular el día de la semana actual (0 es lunes, 6 es domingo)
+dia_semana_actual = hoy.weekday()
+
+# Calcular el desplazamiento necesario para llegar al lunes (inicio de semana laboral)
+inicio_semana_laboral = hoy - datetime.timedelta(days=dia_semana_actual)
+
+# Calcular el desplazamiento necesario para llegar al viernes (final de semana laboral)
+fin_semana_laboral = hoy + datetime.timedelta(days=(4 - dia_semana_actual))
+
+# Obtener el primer día del mes actual
+inicio_mes = hoy.replace(day=1)
+
+# Obtener el último día del mes actual
+if hoy.month == 12:  # Si el mes actual es diciembre
+    siguiente_mes = inicio_mes.replace(year=inicio_mes.year + 1, month=1)
+else:
+    siguiente_mes = inicio_mes.replace(month=inicio_mes.month + 1)
+fin_mes = siguiente_mes - datetime.timedelta(days=1)
 
 Main, Maq1, Maq2, Maq3, Maq4, Maq5 = st.tabs(["Main", "Maquina 1", "Maquina 2", "Maquina 3", "Maquina 4", "Maquina 5"])
 
+with Main:
+  
 with Maq1:
-  # Obtener la fecha actual
-  hoy = datetime.date.today()
-
-  # Calcular el día de la semana actual (0 es lunes, 6 es domingo)
-  dia_semana_actual = hoy.weekday()
-
-  # Calcular el desplazamiento necesario para llegar al lunes (inicio de semana laboral)
-  inicio_semana_laboral = hoy - datetime.timedelta(days=dia_semana_actual)
-
-  # Calcular el desplazamiento necesario para llegar al viernes (final de semana laboral)
-  fin_semana_laboral = hoy + datetime.timedelta(days=(4 - dia_semana_actual))
-
-  # Obtener el primer día del mes actual
-  inicio_mes = hoy.replace(day=1)
-
-  # Obtener el último día del mes actual
-  if hoy.month == 12:  # Si el mes actual es diciembre
-      siguiente_mes = inicio_mes.replace(year=inicio_mes.year + 1, month=1)
-  else:
-      siguiente_mes = inicio_mes.replace(month=inicio_mes.month + 1)
-  fin_mes = siguiente_mes - datetime.timedelta(days=1)
-
-  # Maquina
   maq = "maq1"
   
   st.write('')
-  
   row0_spacer1, row0_col1, row0_spacer2, row0_col2, row0_spacer3, row0_col3 = st.columns((1.8, 3, 1.5, 3, 1.5, 3))
   row0_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
   row0_col2.metric(label="### Productividad Semanal", value="100%", delta=80)
@@ -133,11 +141,7 @@ with Maq1:
   with row1_col1:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
-    df_last = compute_movement(df_orig,maq,d_ini,d_fin)
-    fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
-    fig.update_layout(width=550)
-    fig.update_layout(height=400)
-    fig.update_yaxes(range=[0, 100]) 
+    fig = line_graphic(df_orig,maquina,d_ini,d_fin)
     st.write(fig)
   with row1_col2:
     d_ini = pd.to_datetime(inicio_semana_laboral).date()
