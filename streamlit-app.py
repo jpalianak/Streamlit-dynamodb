@@ -87,7 +87,7 @@ with Maq1:
   with col1:
     d_ini = datetime.datetime.today()
     d_fin = datetime.datetime.today()
-    maq = maq1
+    maq = "maq1"
     df_dia = compute_movement(df_orig,maq,d_ini,d_fin)
     st.metric(label="### Productividad Diaria", value="100%", delta=80)
     fig1 = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True,title='Evolucion de la Productividad')
