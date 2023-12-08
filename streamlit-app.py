@@ -93,7 +93,7 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
 
 def line_graphic_maq(df_orig,maq,d_ini,d_fin): 
   df_last = compute_movement(df_orig,maq,d_ini,d_fin)
-  fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
+  fig = px.line(data_frame=df_last, x='Date', y='Productivity',markers=True)
   fig.update_layout(width=550)
   fig.update_layout(height=400)
   fig.update_yaxes(range=[0, 100]) 
@@ -101,7 +101,7 @@ def line_graphic_maq(df_orig,maq,d_ini,d_fin):
 
 def line_graphic_main(df_orig,maq,d_ini,d_fin): 
   df_last = compute_movement(df_orig,maq,d_ini,d_fin)
-  fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
+  fig = px.line(data_frame=df_last, x='Date', y='Productivity',markers=True)
   fig.update_layout(width=550)
   fig.update_layout(height=300)
   fig.update_yaxes(range=[0, 100]) 
@@ -140,7 +140,7 @@ with Main:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
     fig = line_graphic_main(df_orig,"maq1",d_ini,d_fin)
-    fig.show()
+    st.write(fig)
   with row1_col2:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
