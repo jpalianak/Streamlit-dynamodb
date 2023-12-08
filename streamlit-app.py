@@ -175,6 +175,8 @@ with Main:
     
 with Maq1:
   st.write('')
+  st.write('')
+  st.write('')
   
   Maquina = "maq1" 
 
