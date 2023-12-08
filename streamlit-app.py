@@ -36,7 +36,7 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
   df_orig['Ycenter'] = df_orig['Ymax'] - df_orig['Ymin']
    
   # Filtro del dataframe segun los parametros seleccionados
-  df_filter = df_orig[(pd.to_datetime(df_orig['Date']).dt.date >= pd.to_datetime(d_ini)) & (pd.to_datetime(df_orig['Date']).dt.date <= pd.to_datetime(d_fin))]
+  df_filter = df_orig[(pd.to_datetime(df_orig['Date']).dt.date >= pd.to_datetime(d_ini).date()) & (pd.to_datetime(df_orig['Date']).dt.date <= pd.to_datetime(d_fin).date())]
 
   # Crear un nuevo dataframe
   df_new = pd.DataFrame()
