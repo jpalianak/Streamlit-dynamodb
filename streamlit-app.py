@@ -94,6 +94,13 @@ with Maq1:
   # Calcular el desplazamiento necesario para llegar al viernes (final de semana laboral)
   fin_semana_laboral = hoy + datetime.timedelta(days=(4 - dia_semana_actual))
 
+  # Obtener el primer día del mes actual
+  inicio_mes = hoy.replace(day=1)
+
+  # Obtener el último día del mes actual
+  siguiente_mes = inicio_mes.replace(month=inicio_mes.month + 1, day=1)
+  fin_mes = siguiente_mes - datetime.timedelta(days=1)
+
   # Maquina
   maq = "maq1"
   
@@ -124,8 +131,8 @@ with Maq1:
     fig.update_yaxes(range=[0, 100]) 
     st.write(fig)
   with row1_col3:
-    d_ini = pd.to_datetime(datetime.datetime.today()).date() - datetime.timedelta(days=30)
-    d_fin = pd.to_datetime(datetime.datetime.today()).date()
+    d_ini = pd.to_datetime(inicio_mes).date()
+    d_fin = pd.to_datetime(fin_mes).date()
     df_last = compute_movement(df_orig,maq,d_ini,d_fin)
     fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
     fig.update_layout(width=550)
