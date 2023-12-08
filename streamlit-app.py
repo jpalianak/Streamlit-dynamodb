@@ -41,8 +41,6 @@ def set_page_container_style(
             unsafe_allow_html=True,
         )
 
-
-
 # Creamos un placeholder inicial vacío
 placeholder = st.empty()
 
