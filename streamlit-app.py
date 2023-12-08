@@ -91,7 +91,7 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
   df_new['Ratio'] = df_new['Ratio']*100
   return df_new
 
-def line_graphic(df_orig,maquina,d_ini,d_fin): 
+def line_graphic(df_orig,maq,d_ini,d_fin): 
   df_last = compute_movement(df_orig,maq,d_ini,d_fin)
   fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
   fig.update_layout(width=550)
