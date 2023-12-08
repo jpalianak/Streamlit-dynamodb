@@ -79,6 +79,9 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
 df_orig = get_data()
   
 Maq1, Maq1, Maq1 = st.tabs(["Maquina 1", "Maquina 2", "Maquina 3"])
-   
+
+with tab1:
+   st.header("Maquina 1")
+      
 time.sleep(1)   
     
