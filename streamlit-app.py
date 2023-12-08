@@ -36,7 +36,7 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
   df_orig['Ycenter'] = df_orig['Ymax'] - df_orig['Ymin']
    
   # Filtro del dataframe segun los parametros seleccionados
-  df_filter = df_orig[(pd.to_datetime(df_orig['Date']).dt.date >= d_ini) & (pd.to_datetime(df_orig['Date']).dt.date <= d_fin)]
+  df_filter = df_orig[(pd.to_datetime(df_orig['Date']).dt.date >= pd.to_datetime(d_ini)) & (pd.to_datetime(df_orig['Date']).dt.date <= pd.to_datetime(d_fin))]
 
   # Crear un nuevo dataframe
   df_new = pd.DataFrame()
@@ -85,8 +85,8 @@ with Maq1:
   st.write('')
   row0_spacer1, col1, row0_spacer2, col2, row0_spacer3, col3 = st.columns((.7, 3, .1, 3, .1, 3))
   with col1:
-    d_ini = datetime.datetime.today().strftime("%Y-%m-%d")
-    d_fin = datetime.datetime.today().strftime("%Y-%m-%d")
+    d_ini = datetime.datetime.today()
+    d_fin = datetime.datetime.today()
     maq = "maq1"
     df_dia = compute_movement(df_orig,maq,d_ini,d_fin)
     st.metric(label="### Productividad Diaria", value="100%", delta=80)
