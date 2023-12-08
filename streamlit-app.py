@@ -101,7 +101,7 @@ def line_graphic_maq(df_orig,maq,d_ini,d_fin):
 
 def line_graphic_main(df_orig,maq,d_ini,d_fin): 
   df_last = compute_movement(df_orig,maq,d_ini,d_fin)
-  fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
+  fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True,title='Productividad diaria')
   fig.update_layout(width=550)
   fig.update_layout(height=300)
   fig.update_yaxes(range=[0, 100]) 
