@@ -183,7 +183,6 @@ with Maq1:
     fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
     fig.update_layout(xaxis_title="Date", yaxis_title="Daily Productivity [%]",width=1400,height=350)
     st.write(fig)
-    
     row1_col1, row1_col2 = st.columns((3, 3))
     with row1_col1:
       d_ini = pd.to_datetime(inicio_semana_laboral).date()
@@ -201,16 +200,13 @@ with Maq1:
     row2_spacer1,  row2_col1, row2_spacer1 = st.columns((1.5, 3, 0.1))
     st.write('')
     st.write('')
+    row2_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
     st.write('')
     st.write('')
-    st.write('')
-    st.metric(label="### Productividad Diaria", value="100%", delta=80)
-    st.write('')
-    st.write('')
-    st.metric(label="### Productividad Semanal", value="100%", delta=80)
+    row2_col1.metric(label="### Productividad Semanal", value="100%", delta=80)
     st.write('')
     st.write('')
-    st.metric(label="### Productividad Mensual", value="100%", delta=80)
+    row2_col1.metric(label="### Productividad Mensual", value="100%", delta=80)
 
 time.sleep(1)   
     
