@@ -94,7 +94,7 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
 def line_graphic_maq(df_orig,maq,d_ini,d_fin): 
   df_last = compute_movement(df_orig,maq,d_ini,d_fin)
   fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
-  fig.update_layout(xaxis_title="Date", yaxis_title="Productivity [%]",width=550,height=350)
+  fig.update_layout(xaxis_title="Date", yaxis_title="Productivity [%]",width=600,height=350)
   fig.update_yaxes(range=[0, 100]) 
   return fig
 
@@ -181,7 +181,7 @@ with Maq1:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
     fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
-    fig.update_layout(xaxis_title="Date", yaxis_title="Daily Productivity [%]",width=1100,height=350)
+    fig.update_layout(xaxis_title="Date", yaxis_title="Daily Productivity [%]",width=1200,height=350)
     st.write(fig)
     
     row1_col1, row1_col2 = st.columns((3, 3))
@@ -196,11 +196,14 @@ with Maq1:
       fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
       st.write(fig)
   with row0_col2:
-    row1_spacer1,  row1_col1, row1_spacer1 = st.columns((0.5, 3, 0.1))
+    row1_spacer1,  row1_col1, row1_spacer1 = st.columns((1.5, 3, 0.1))
+    st.write('')
     st.write('')
     row1_col1.metric(label="### Productividad Diaria", value="100%", delta=80)
     st.write('')
+    st.write('')
     row1_col1.metric(label="### Productividad Semanal", value="100%", delta=80)
+    st.write('')
     st.write('')
     row1_col1.metric(label="### Productividad Mensual", value="100%", delta=80)
 
