@@ -197,7 +197,7 @@ with Maq1:
       fig.update_layout(yaxis_title="Monthly productivity [%]")
       st.write(fig)
   with row0_col2:
-    fig1 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 45,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 40},title = {'text': "Daily"}), gauge = {'axis': {'range': [0, 100]}})
+    fig1 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 45, domain = {'x': [0, 1], 'y': [0, 1]}, delta = {'reference': 40}, title = {'text': "Daily"}, gauge = {'axis': {'range': [0, 100]}})
     fig1.update_layout(width=500,height=200,margin=dict(l=20, r=20, b=20, t=50))
     #st.write(fig)
     fig2 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 42,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 45},title = {'text': "Weekly"}))
