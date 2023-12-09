@@ -200,10 +200,10 @@ with Maq1:
     fig1 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 45, domain = {'x': [0, 1], 'y': [0, 1]}, delta = {'reference': 40}, title = {'text': "Daily"}, gauge = {'axis': {'range': [0, 100]}}))
     fig1.update_layout(width=500,height=200,margin=dict(l=20, r=20, b=20, t=50))
     #st.write(fig)
-    fig2 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 42,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 45},title = {'text': "Weekly"}))
+    fig2 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 42,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 45},title = {'text': "Weekly"}, gauge = {'axis': {'range': [0, 100]}}))
     fig2.update_layout(width=500,height=200,margin=dict(l=20, r=20, b=20, t=50))
     #st.write(fig)
-    fig3 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 38,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 35},title = {'text': "Monthly"}))
+    fig3 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 38,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 35},title = {'text': "Monthly"}, gauge = {'axis': {'range': [0, 100]}}))
     fig3.update_layout(width=500,height=200,margin=dict(l=20, r=20, b=20, t=50))
     st.write(fig1,fig2,fig3)
 
