@@ -73,7 +73,8 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
                      df_filter['Xcenter'].shift()).iloc[1:]
   ycenter_diff = abs(df_filter['Ycenter'] -
                      df_filter['Ycenter'].shift()).iloc[1:]
-
+  st.write(xcenter_diff)
+  st.write(ycenter_diff)
   # umbral de diferencia de posicion del centro del bounding box para determinar si esta en movimieno o no
   threshold = 0.001
   
@@ -97,7 +98,7 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
   # Porcentaje de productividad
   df_new['Ratio'] = df_new['Cumulative_sum_si'] / df_new['Cumulative_total']
   df_new['Ratio'] = df_new['Ratio']*100
-  st.write(df_new.head())
+  #st.write(df_new.head())
   return df_new
 
 def line_graphic_maq(df_orig,maq,d_ini,d_fin): 
