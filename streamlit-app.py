@@ -49,6 +49,7 @@ def get_data():
   df['Ymax'] = pd.to_numeric(df['Ymax'])
   df['Ymin'] = pd.to_numeric(df['Ymin'])
   df = df.sort_values(by='Date_num')
+  st.write(df.head())
   return df
   
 def compute_movement(df_orig,maquina,d_ini,d_fin): 
