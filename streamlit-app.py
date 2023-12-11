@@ -57,7 +57,7 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
   # Calculo del centro del bounding box
   df_orig['Xcenter'] = df_orig['Xmax'] - df_orig['Xmin']
   df_orig['Ycenter'] = df_orig['Ymax'] - df_orig['Ymin']
-   
+  st.write(df_orig.head())
   # Filtro del dataframe segun los parametros seleccionados
   df_filter = df_orig[(pd.to_datetime(df_orig['Date']).dt.date >= d_ini) & (pd.to_datetime(df_orig['Date']).dt.date <= d_fin)]
 
@@ -73,8 +73,7 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
                      df_filter['Xcenter'].shift()).iloc[1:]
   ycenter_diff = abs(df_filter['Ycenter'] -
                      df_filter['Ycenter'].shift()).iloc[1:]
-  st.write(xcenter_diff)
-  st.write(ycenter_diff)
+
   # umbral de diferencia de posicion del centro del bounding box para determinar si esta en movimieno o no
   threshold = 0.001
   
