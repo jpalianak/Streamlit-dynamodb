@@ -73,8 +73,7 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
                      df_filter['Xcenter'].shift()).iloc[1:]
   ycenter_diff = abs(df_filter['Ycenter'] -
                      df_filter['Ycenter'].shift()).iloc[1:]
-  st.write(xcenter_diff)
-  st.write(ycenter_diff)
+
   # umbral de diferencia de posicion del centro del bounding box para determinar si esta en movimieno o no
   threshold = 0.001
   
