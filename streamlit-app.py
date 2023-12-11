@@ -55,8 +55,8 @@ def get_data():
 def compute_movement(df_orig,maquina,d_ini,d_fin): 
 
   # Calculo del centro del bounding box
-  df_orig['Xcenter'] = df_orig['Xmax'] - df_orig['Xmin']
-  df_orig['Ycenter'] = df_orig['Ymax'] - df_orig['Ymin']
+  df_orig['Xcenter'] = (df_orig['Xmax'] + df_orig['Xmin'])/2
+  df_orig['Ycenter'] = (df_orig['Ymax'] + df_orig['Ymin'])/2
   st.write(df_orig.head())
   # Filtro del dataframe segun los parametros seleccionados
   df_filter = df_orig[(pd.to_datetime(df_orig['Date']).dt.date >= d_ini) & (pd.to_datetime(df_orig['Date']).dt.date <= d_fin)]
