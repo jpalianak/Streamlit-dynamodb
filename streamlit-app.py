@@ -43,6 +43,11 @@ def get_data():
   # Convertir los datos a un DataFrame de Pandas
   df = pd.DataFrame(items)
   df['Date_num'] = pd.to_datetime(df['Date']).astype('int64') // 10**9
+  df['Socre'] = pd.to_numeric(df['Score'])
+  df['Xmax'] = pd.to_numeric(df['Xmax'])
+  df['Xmin'] = pd.to_numeric(df['Xmin'])
+  df['Ymax'] = pd.to_numeric(df['Ymax'])
+  df['Ymin'] = pd.to_numeric(df['Ymin'])
   df = df.sort_values(by='Date_num')
   return df
   
