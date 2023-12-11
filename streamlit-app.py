@@ -102,10 +102,11 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
 
 def line_graphic_maq(df_orig,maq,d_ini,d_fin): 
   df_last = compute_movement(df_orig,maq,d_ini,d_fin)
+  last_score = df['Score'].iloc[-1]
   fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
   fig.update_layout(xaxis_title="Date", yaxis_title="Productivity [%]",width=700,height=350)
   fig.update_yaxes(range=[0, 100]) 
-  return fig
+  return fig, last_score
 
 def line_graphic_main(df_orig,maq,d_ini,d_fin): 
   df_last = compute_movement(df_orig,maq,d_ini,d_fin)
@@ -188,30 +189,30 @@ with Maq1:
   with row0_col1:
     d_ini = pd.to_datetime(hoy).date()
     d_fin = pd.to_datetime(hoy).date()
-    fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
+    fig, last_score_daily = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
     fig.update_layout(xaxis_title="Date", yaxis_title="Daily Productivity [%]",width=1400,height=350)
     st.write(fig)
     row1_col1, row1_col2 = st.columns((3, 3))
     with row1_col1:
       d_ini = pd.to_datetime(inicio_semana_laboral).date()
       d_fin = pd.to_datetime(fin_semana_laboral).date()
-      fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
+      fig, last_score_weekly = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
       fig.update_layout(yaxis_title="Weekly productivity [%]")
       st.write(fig)
     with row1_col2:
       d_ini = pd.to_datetime(inicio_mes).date()
       d_fin = pd.to_datetime(fin_mes).date()
-      fig = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
+      fig, last_score_monthly = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
       fig.update_layout(yaxis_title="Monthly productivity [%]")
       st.write(fig)
   with row0_col2:
-    fig1 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 45, domain = {'x': [0, 1], 'y': [0, 1]}, delta = {'reference': 40}, title = {'text': "Daily"}, gauge = {'axis': {'range': [0, 100]}}))
+    fig1 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = last_score_daily, domain = {'x': [0, 1], 'y': [0, 1]}, delta = {'reference': 40}, title = {'text': "Daily"}, gauge = {'axis': {'range': [0, 100]}}))
     fig1.update_layout(width=500,height=200,margin=dict(l=20, r=20, b=20, t=50))
     #st.write(fig)
-    fig2 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 42,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 45},title = {'text': "Weekly"}, gauge = {'axis': {'range': [0, 100]}}))
+    fig2 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = last_score_weekly,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 45},title = {'text': "Weekly"}, gauge = {'axis': {'range': [0, 100]}}))
     fig2.update_layout(width=500,height=200,margin=dict(l=20, r=20, b=20, t=50))
     #st.write(fig)
-    fig3 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = 38,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 35},title = {'text': "Monthly"}, gauge = {'axis': {'range': [0, 100]}}))
+    fig3 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = last_score_monthly,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 35},title = {'text': "Monthly"}, gauge = {'axis': {'range': [0, 100]}}))
     fig3.update_layout(width=500,height=200,margin=dict(l=20, r=20, b=20, t=50))
     st.write(fig1,fig2,fig3)
 
