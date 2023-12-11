@@ -43,7 +43,7 @@ def get_data():
   # Convertir los datos a un DataFrame de Pandas
   df = pd.DataFrame(items)
   #df['Date_num'] = pd.to_datetime(df['Date']).astype('int64') // 10**9
-  df['Date_num'] = pd.to_datetime(df['Date'])
+  df['Date_num'] = pd.to_datetime(df['Date']).astype('int64')
   df['Socre'] = pd.to_numeric(df['Score'])
   df['Xmax'] = pd.to_numeric(df['Xmax'])
   df['Xmin'] = pd.to_numeric(df['Xmin'])
