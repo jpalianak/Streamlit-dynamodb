@@ -49,7 +49,7 @@ def get_data():
   df['Ymax'] = pd.to_numeric(df['Ymax'])
   df['Ymin'] = pd.to_numeric(df['Ymin'])
   df = df.sort_values(by='Date_num')
-  st.write(df.head())
+  #st.write(df.head())
   return df
   
 def compute_movement(df_orig,maquina,d_ini,d_fin): 
@@ -97,6 +97,7 @@ def compute_movement(df_orig,maquina,d_ini,d_fin):
   # Porcentaje de productividad
   df_new['Ratio'] = df_new['Cumulative_sum_si'] / df_new['Cumulative_total']
   df_new['Ratio'] = df_new['Ratio']*100
+  st.write(df_new.head())
   return df_new
 
 def line_graphic_maq(df_orig,maq,d_ini,d_fin): 
