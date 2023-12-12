@@ -5,6 +5,7 @@ import boto3
 import plotly.express as px
 import datetime
 import plotly.graph_objects as go
+from streamlit_autorefresh import st_autorefresh
 
 st.set_page_config(layout="wide")
 
