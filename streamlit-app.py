@@ -113,107 +113,109 @@ def line_graphic_main(df_orig,maq,d_ini,d_fin):
   fig.update_layout(xaxis_title="Date", yaxis_title="Daily productivity [%]",width=550,height=350)
   fig.update_yaxes(range=[0, 100]) 
   return fig
-  
-# Obtenemos los datos
-df_orig = get_data()
 
-# Obtener la fecha actual
-hoy = datetime.date.today()
+def main():
+  # Obtenemos los datos
+  df_orig = get_data()
 
-# Calcular el día de la semana actual (0 es lunes, 6 es domingo)
-dia_semana_actual = hoy.weekday()
+  # Obtener la fecha actual
+  hoy = datetime.date.today()
 
-# Calcular el desplazamiento necesario para llegar al lunes (inicio de semana laboral)
-inicio_semana_laboral = hoy - datetime.timedelta(days=dia_semana_actual)
+  # Calcular el día de la semana actual (0 es lunes, 6 es domingo)
+  dia_semana_actual = hoy.weekday()
 
-# Calcular el desplazamiento necesario para llegar al viernes (final de semana laboral)
-fin_semana_laboral = hoy + datetime.timedelta(days=(4 - dia_semana_actual))
+  # Calcular el desplazamiento necesario para llegar al lunes (inicio de semana laboral)
+  inicio_semana_laboral = hoy - datetime.timedelta(days=dia_semana_actual)
 
-# Obtener el primer día del mes actual
-inicio_mes = hoy.replace(day=1)
+  # Calcular el desplazamiento necesario para llegar al viernes (final de semana laboral)
+  fin_semana_laboral = hoy + datetime.timedelta(days=(4 - dia_semana_actual))
 
-# Obtener el último día del mes actual
-if hoy.month == 12:  # Si el mes actual es diciembre
-    siguiente_mes = inicio_mes.replace(year=inicio_mes.year + 1, month=1)
-else:
-    siguiente_mes = inicio_mes.replace(month=inicio_mes.month + 1)
-fin_mes = siguiente_mes - datetime.timedelta(days=1)
+  # Obtener el primer día del mes actual
+  inicio_mes = hoy.replace(day=1)
 
-Main, Maq1, Maq2, Maq3, Maq4, Maq5, Maq6 = st.tabs(["Resumen", "Maquina 1", "Maquina 2", "Maquina 3", "Maquina 4", "Maquina 5", "Maquina 6"])
+  # Obtener el último día del mes actual
+  if hoy.month == 12:  # Si el mes actual es diciembre
+      siguiente_mes = inicio_mes.replace(year=inicio_mes.year + 1, month=1)
+  else:
+      siguiente_mes = inicio_mes.replace(month=inicio_mes.month + 1)
+  fin_mes = siguiente_mes - datetime.timedelta(days=1)
 
-with Main:
-  row1_col1, row1_col2, row1_col3 = st.columns(3)
-  with row1_col1:
-    d_ini = pd.to_datetime(hoy).date()
-    d_fin = pd.to_datetime(hoy).date()
-    fig = line_graphic_main(df_orig,"maq1",d_ini,d_fin)
-    fig.update_layout(yaxis_title="Productividad Diaria [%] - Maquina 1")
-    st.write(fig)
-  with row1_col2:
-    d_ini = pd.to_datetime(hoy).date()
-    d_fin = pd.to_datetime(hoy).date()
-    fig = line_graphic_main(df_orig,"maq2",d_ini,d_fin) 
-    fig.update_layout(yaxis_title="Productividad Diaria [%] - Maquina 2")
-    st.write(fig)
-  with row1_col3:
-    d_ini = pd.to_datetime(hoy).date()
-    d_fin = pd.to_datetime(hoy).date()
-    fig = line_graphic_main(df_orig,"maq3",d_ini,d_fin)
-    fig.update_layout(yaxis_title="Productividad Diaria [%] - Maquina 3")
-    st.write(fig)
-  row3_col1, row3_col2, row3_col3 = st.columns(3)
-  with row3_col1:
-    d_ini = pd.to_datetime(hoy).date()
-    d_fin = pd.to_datetime(hoy).date()
-    fig = line_graphic_main(df_orig,"maq4",d_ini,d_fin)
-    fig.update_layout(yaxis_title="Productividad Diaria [%] - Maquina 4")
-    st.write(fig)
-  with row3_col2:
-    d_ini = pd.to_datetime(hoy).date()
-    d_fin = pd.to_datetime(hoy).date()
-    fig = line_graphic_main(df_orig,"maq5",d_ini,d_fin) 
-    fig.update_layout(yaxis_title="Productividad Diaria [%] - Maquina 5")
-    st.write(fig)
-  with row3_col3:
-    d_ini = pd.to_datetime(hoy).date()
-    d_fin = pd.to_datetime(hoy).date()
-    fig = line_graphic_main(df_orig,"maq6",d_ini,d_fin)
-    fig.update_layout(yaxis_title="Productividad Diaria [%] - Maquina 6")
-    st.write(fig)
-    
-with Maq1:
-  Maquina = "maq1" 
+  Main, Maq1, Maq2, Maq3, Maq4, Maq5, Maq6 = st.tabs(["Resumen", "Maquina 1", "Maquina 2", "Maquina 3", "Maquina 4", "Maquina 5", "Maquina 6"])
 
-  row0_col1, row0_spacer2, row0_col2 = st.columns((6, 0.1, 2))
-  with row0_col1:
-    d_ini = pd.to_datetime(hoy).date()
-    d_fin = pd.to_datetime(hoy).date()
-    fig, last_ratio_daily = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
-    fig.update_layout(xaxis_title="Date", yaxis_title="Productividad Diaria [%]",width=1400,height=350)
-    st.write(fig)
-    row1_col1, row1_col2 = st.columns((3, 3))
+  with Main:
+    row1_col1, row1_col2, row1_col3 = st.columns(3)
     with row1_col1:
-      d_ini = pd.to_datetime(inicio_semana_laboral).date()
-      d_fin = pd.to_datetime(fin_semana_laboral).date()
-      fig, last_ratio_weekly = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
-      fig.update_layout(yaxis_title="Productividad Semanal [%]")
+      d_ini = pd.to_datetime(hoy).date()
+      d_fin = pd.to_datetime(hoy).date()
+      fig = line_graphic_main(df_orig,"maq1",d_ini,d_fin)
+      fig.update_layout(yaxis_title="Productividad Diaria [%] - Maquina 1")
       st.write(fig)
     with row1_col2:
-      d_ini = pd.to_datetime(inicio_mes).date()
-      d_fin = pd.to_datetime(fin_mes).date()
-      fig, last_ratio_monthly = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
-      fig.update_layout(yaxis_title="Productividad Mensual [%]")
+      d_ini = pd.to_datetime(hoy).date()
+      d_fin = pd.to_datetime(hoy).date()
+      fig = line_graphic_main(df_orig,"maq2",d_ini,d_fin) 
+      fig.update_layout(yaxis_title="Productividad Diaria [%] - Maquina 2")
       st.write(fig)
-  with row0_col2:
-    fig1 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = last_ratio_daily, domain = {'x': [0, 1], 'y': [0, 1]}, delta = {'reference': 40}, title = {'text': "Diaria"}, gauge = {'axis': {'range': [0, 100]}}))
-    fig1.update_layout(width=500,height=200,margin=dict(l=20, r=20, b=20, t=50))
-    #st.write(fig)
-    fig2 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = last_ratio_weekly,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 45},title = {'text': "Semanal"}, gauge = {'axis': {'range': [0, 100]}}))
-    fig2.update_layout(width=500,height=200,margin=dict(l=20, r=20, b=20, t=50))
-    #st.write(fig)
-    fig3 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = last_ratio_monthly,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 35},title = {'text': "Mensual"}, gauge = {'axis': {'range': [0, 100]}}))
-    fig3.update_layout(width=500,height=200,margin=dict(l=20, r=20, b=20, t=50))
-    st.write(fig1,fig2,fig3)
+    with row1_col3:
+      d_ini = pd.to_datetime(hoy).date()
+      d_fin = pd.to_datetime(hoy).date()
+      fig = line_graphic_main(df_orig,"maq3",d_ini,d_fin)
+      fig.update_layout(yaxis_title="Productividad Diaria [%] - Maquina 3")
+      st.write(fig)
+    row3_col1, row3_col2, row3_col3 = st.columns(3)
+    with row3_col1:
+      d_ini = pd.to_datetime(hoy).date()
+      d_fin = pd.to_datetime(hoy).date()
+      fig = line_graphic_main(df_orig,"maq4",d_ini,d_fin)
+      fig.update_layout(yaxis_title="Productividad Diaria [%] - Maquina 4")
+      st.write(fig)
+    with row3_col2:
+      d_ini = pd.to_datetime(hoy).date()
+      d_fin = pd.to_datetime(hoy).date()
+      fig = line_graphic_main(df_orig,"maq5",d_ini,d_fin) 
+      fig.update_layout(yaxis_title="Productividad Diaria [%] - Maquina 5")
+      st.write(fig)
+    with row3_col3:
+      d_ini = pd.to_datetime(hoy).date()
+      d_fin = pd.to_datetime(hoy).date()
+      fig = line_graphic_main(df_orig,"maq6",d_ini,d_fin)
+      fig.update_layout(yaxis_title="Productividad Diaria [%] - Maquina 6")
+      st.write(fig)
+    
+  with Maq1:
+    Maquina = "maq1" 
 
-time.sleep(1)   
+    row0_col1, row0_spacer2, row0_col2 = st.columns((6, 0.1, 2))
+    with row0_col1:
+      d_ini = pd.to_datetime(hoy).date()
+      d_fin = pd.to_datetime(hoy).date()
+      fig, last_ratio_daily = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
+      fig.update_layout(xaxis_title="Date", yaxis_title="Productividad Diaria [%]",width=1400,height=350)
+      st.write(fig)
+      row1_col1, row1_col2 = st.columns((3, 3))
+      with row1_col1:
+        d_ini = pd.to_datetime(inicio_semana_laboral).date()
+        d_fin = pd.to_datetime(fin_semana_laboral).date()
+        fig, last_ratio_weekly = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
+        fig.update_layout(yaxis_title="Productividad Semanal [%]")
+        st.write(fig)
+      with row1_col2:
+        d_ini = pd.to_datetime(inicio_mes).date()
+        d_fin = pd.to_datetime(fin_mes).date()
+        fig, last_ratio_monthly = line_graphic_maq(df_orig,Maquina,d_ini,d_fin)
+        fig.update_layout(yaxis_title="Productividad Mensual [%]")
+        st.write(fig)
+    with row0_col2:
+      fig1 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = last_ratio_daily, domain = {'x': [0, 1], 'y': [0, 1]}, delta = {'reference': 40}, title = {'text': "Diaria"}, gauge = {'axis': {'range': [0, 100]}}))
+      fig1.update_layout(width=500,height=200,margin=dict(l=20, r=20, b=20, t=50))
+      
+      fig2 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = last_ratio_weekly,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 45},title = {'text': "Semanal"}, gauge = {'axis': {'range': [0, 100]}}))
+      fig2.update_layout(width=500,height=200,margin=dict(l=20, r=20, b=20, t=50))
+      
+      fig3 = go.Figure(go.Indicator(mode = "gauge+number+delta",value = last_ratio_monthly,domain = {'x': [0, 1], 'y': [0, 1]},delta = {'reference': 35},title = {'text': "Mensual"}, gauge = {'axis': {'range': [0, 100]}}))
+      fig3.update_layout(width=500,height=200,margin=dict(l=20, r=20, b=20, t=50))
+      
+      st.write(fig1,fig2,fig3)
+
+st.dataframe(main())   
     
