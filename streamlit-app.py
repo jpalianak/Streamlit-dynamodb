@@ -9,7 +9,7 @@ from streamlit_autorefresh import st_autorefresh
 
 st.set_page_config(layout="wide")
 
-st_autorefresh(interval=0.5 * 60 * 1000, key="dataframerefresh")
+st_autorefresh(interval=5000 * 60 * 1000, key="dataframerefresh")
 
 # Creamos un placeholder inicial vacío
 spacer = st.empty()
