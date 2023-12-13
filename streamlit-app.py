@@ -3,13 +3,15 @@ import pandas as pd
 import time
 import boto3
 import plotly.express as px
-import datetime
+from datetime import datetime, timezone, timedelta
 import plotly.graph_objects as go
 from streamlit_autorefresh import st_autorefresh
 
 st.set_page_config(layout="wide")
 
 st_autorefresh(interval=5000 * 60 * 1000, key="dataframerefresh")
+
+zona_horaria = timezone(timedelta(hours=-4)
 
 # Creamos un placeholder inicial vacío
 spacer = st.empty()
@@ -121,7 +123,8 @@ def main():
   df_orig = get_data()
 
   # Obtener la fecha actual
-  hoy = datetime.date.today()
+  #hoy = datetime.date.today()
+  hoy = datetime.now(zona_horaria).date()
 
   # Calcular el día de la semana actual (0 es lunes, 6 es domingo)
   dia_semana_actual = hoy.weekday()
