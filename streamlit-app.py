@@ -145,7 +145,8 @@ def main():
       siguiente_mes = inicio_mes.replace(year=inicio_mes.year + 1, month=1)
   else:
       siguiente_mes = inicio_mes.replace(month=inicio_mes.month + 1)
-  fin_mes = siguiente_mes - datetime.timedelta(days=1)
+  #fin_mes = siguiente_mes - datetime.timedelta(days=1)
+  fin_mes = siguiente_mes - timedelta(days=1)
 
   Main, Maq1, Maq2, Maq3, Maq4, Maq5, Maq6 = st.tabs(["Resumen", "Maquina 1", "Maquina 2", "Maquina 3", "Maquina 4", "Maquina 5", "Maquina 6"])
 
