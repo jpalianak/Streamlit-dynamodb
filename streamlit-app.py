@@ -135,7 +135,7 @@ def main():
 
   # Calcular el desplazamiento necesario para llegar al viernes (final de semana laboral)
   #fin_semana_laboral = hoy + datetime.timedelta(days=(4 - dia_semana_actual))
-  fin_semana_laboral = hoy + hoy + timedelta(days=(4 - dia_semana_actual))
+  fin_semana_laboral = hoy + timedelta(days=(4 - dia_semana_actual))
   
   # Obtener el primer día del mes actual
   inicio_mes = hoy.replace(day=1)
