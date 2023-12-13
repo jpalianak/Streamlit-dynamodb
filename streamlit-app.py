@@ -11,7 +11,7 @@ st.set_page_config(layout="wide")
 
 st_autorefresh(interval=5000 * 60 * 1000, key="dataframerefresh")
 
-zona_horaria = timezone(timedelta(hours=-4)
+zona_horaria = timezone(timedelta(hours=-4))
 
 # Creamos un placeholder inicial vacío
 spacer = st.empty()
