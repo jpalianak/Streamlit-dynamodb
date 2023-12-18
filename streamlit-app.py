@@ -9,7 +9,8 @@ from streamlit_autorefresh import st_autorefresh
 
 st.set_page_config(layout="wide")
 
-st_autorefresh(interval=5000 * 60 * 1000, key="dataframerefresh")
+# auto refresh el primer numero son la cantidad de minutos
+st_autorefresh(interval=1440 * 1000 * 60 * 1000, key="dataframerefresh")
 
 zona_horaria = timezone(timedelta(hours=-4))
 
